@@ -19,8 +19,6 @@
 		24CD141C1CD9A2C200E19F1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CD141A1CD9A2C200E19F1B /* Main.storyboard */; };
 		24CD141E1CD9A2C200E19F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CD141D1CD9A2C200E19F1B /* Assets.xcassets */; };
 		24CD14211CD9A2C200E19F1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CD141F1CD9A2C200E19F1B /* LaunchScreen.storyboard */; };
-		24CD142C1CD9A2C200E19F1B /* WJBlueListsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD142B1CD9A2C200E19F1B /* WJBlueListsTests.m */; };
-		24CD14371CD9A2C200E19F1B /* WJBlueListsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD14361CD9A2C200E19F1B /* WJBlueListsUITests.m */; };
 		24CD14491CD9A31B00E19F1B /* BluetoothPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD14461CD9A31B00E19F1B /* BluetoothPeripheral.m */; };
 		24CD144A1CD9A31B00E19F1B /* OBDBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD14481CD9A31B00E19F1B /* OBDBluetooth.m */; };
 		24CD144F1CD9B2C500E19F1B /* WJBaseCV.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD144E1CD9B2C500E19F1B /* WJBaseCV.m */; };
@@ -40,20 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		24CD14281CD9A2C200E19F1B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24CD14061CD9A2C200E19F1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 24CD140D1CD9A2C200E19F1B;
-			remoteInfo = WJBlueLists;
-		};
-		24CD14331CD9A2C200E19F1B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24CD14061CD9A2C200E19F1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 24CD140D1CD9A2C200E19F1B;
-			remoteInfo = WJBlueLists;
-		};
 		5395140B1DE6930A0059F87A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24CD14061CD9A2C200E19F1B /* Project object */;
@@ -100,12 +84,6 @@
 		24CD141D1CD9A2C200E19F1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24CD14201CD9A2C200E19F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24CD14221CD9A2C200E19F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24CD14271CD9A2C200E19F1B /* WJBlueListsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WJBlueListsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		24CD142B1CD9A2C200E19F1B /* WJBlueListsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WJBlueListsTests.m; sourceTree = "<group>"; };
-		24CD142D1CD9A2C200E19F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24CD14321CD9A2C200E19F1B /* WJBlueListsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WJBlueListsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		24CD14361CD9A2C200E19F1B /* WJBlueListsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WJBlueListsUITests.m; sourceTree = "<group>"; };
-		24CD14381CD9A2C200E19F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24CD14451CD9A31B00E19F1B /* BluetoothPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothPeripheral.h; sourceTree = "<group>"; };
 		24CD14461CD9A31B00E19F1B /* BluetoothPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothPeripheral.m; sourceTree = "<group>"; };
 		24CD14471CD9A31B00E19F1B /* OBDBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBDBluetooth.h; sourceTree = "<group>"; };
@@ -139,20 +117,6 @@
 			files = (
 				24DB8FB41CEC516400700644 /* GoogleMobileAds.framework in Frameworks */,
 				D1B3546C1E34E30EF73EE360 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		24CD14241CD9A2C200E19F1B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		24CD142F1CD9A2C200E19F1B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,8 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				24CD14101CD9A2C200E19F1B /* WJBlueLists */,
-				24CD142A1CD9A2C200E19F1B /* WJBlueListsTests */,
-				24CD14351CD9A2C200E19F1B /* WJBlueListsUITests */,
 				539514031DE6930A0059F87A /* WJBlueListWidget */,
 				24CD140F1CD9A2C200E19F1B /* Products */,
 				AE5C6384AECBF650D359879A /* Pods */,
@@ -213,8 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				24CD140E1CD9A2C200E19F1B /* WJBlueLists.app */,
-				24CD14271CD9A2C200E19F1B /* WJBlueListsTests.xctest */,
-				24CD14321CD9A2C200E19F1B /* WJBlueListsUITests.xctest */,
 				539514001DE6930A0059F87A /* WJBlueListWidget.appex */,
 			);
 			name = Products;
@@ -247,24 +207,6 @@
 				24CD144B1CD9A3A600E19F1B /* blue_per.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		24CD142A1CD9A2C200E19F1B /* WJBlueListsTests */ = {
-			isa = PBXGroup;
-			children = (
-				24CD142B1CD9A2C200E19F1B /* WJBlueListsTests.m */,
-				24CD142D1CD9A2C200E19F1B /* Info.plist */,
-			);
-			path = WJBlueListsTests;
-			sourceTree = "<group>";
-		};
-		24CD14351CD9A2C200E19F1B /* WJBlueListsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				24CD14361CD9A2C200E19F1B /* WJBlueListsUITests.m */,
-				24CD14381CD9A2C200E19F1B /* Info.plist */,
-			);
-			path = WJBlueListsUITests;
 			sourceTree = "<group>";
 		};
 		24CD14441CD9A2FE00E19F1B /* blueTooth */ = {
@@ -354,42 +296,6 @@
 			productReference = 24CD140E1CD9A2C200E19F1B /* WJBlueLists.app */;
 			productType = "com.apple.product-type.application";
 		};
-		24CD14261CD9A2C200E19F1B /* WJBlueListsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 24CD143E1CD9A2C200E19F1B /* Build configuration list for PBXNativeTarget "WJBlueListsTests" */;
-			buildPhases = (
-				24CD14231CD9A2C200E19F1B /* Sources */,
-				24CD14241CD9A2C200E19F1B /* Frameworks */,
-				24CD14251CD9A2C200E19F1B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				24CD14291CD9A2C200E19F1B /* PBXTargetDependency */,
-			);
-			name = WJBlueListsTests;
-			productName = WJBlueListsTests;
-			productReference = 24CD14271CD9A2C200E19F1B /* WJBlueListsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		24CD14311CD9A2C200E19F1B /* WJBlueListsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 24CD14411CD9A2C200E19F1B /* Build configuration list for PBXNativeTarget "WJBlueListsUITests" */;
-			buildPhases = (
-				24CD142E1CD9A2C200E19F1B /* Sources */,
-				24CD142F1CD9A2C200E19F1B /* Frameworks */,
-				24CD14301CD9A2C200E19F1B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				24CD14341CD9A2C200E19F1B /* PBXTargetDependency */,
-			);
-			name = WJBlueListsUITests;
-			productName = WJBlueListsUITests;
-			productReference = 24CD14321CD9A2C200E19F1B /* WJBlueListsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		539513FF1DE6930A0059F87A /* WJBlueListWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 539514101DE6930A0059F87A /* Build configuration list for PBXNativeTarget "WJBlueListWidget" */;
@@ -421,14 +327,6 @@
 						DevelopmentTeam = 6JC78V6G2N;
 						ProvisioningStyle = Automatic;
 					};
-					24CD14261CD9A2C200E19F1B = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 24CD140D1CD9A2C200E19F1B;
-					};
-					24CD14311CD9A2C200E19F1B = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 24CD140D1CD9A2C200E19F1B;
-					};
 					539513FF1DE6930A0059F87A = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 6JC78V6G2N;
@@ -450,8 +348,6 @@
 			projectRoot = "";
 			targets = (
 				24CD140D1CD9A2C200E19F1B /* WJBlueLists */,
-				24CD14261CD9A2C200E19F1B /* WJBlueListsTests */,
-				24CD14311CD9A2C200E19F1B /* WJBlueListsUITests */,
 				539513FF1DE6930A0059F87A /* WJBlueListWidget */,
 			);
 		};
@@ -469,20 +365,6 @@
 				24F962CA1CEAFF15007973CA /* rightArrow.png in Resources */,
 				24F962C81CEAF4B2007973CA /* back.png in Resources */,
 				24CD141C1CD9A2C200E19F1B /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		24CD14251CD9A2C200E19F1B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		24CD14301CD9A2C200E19F1B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,22 +449,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24CD14231CD9A2C200E19F1B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24CD142C1CD9A2C200E19F1B /* WJBlueListsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		24CD142E1CD9A2C200E19F1B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24CD14371CD9A2C200E19F1B /* WJBlueListsUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		539513FC1DE6930A0059F87A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -594,16 +460,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		24CD14291CD9A2C200E19F1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 24CD140D1CD9A2C200E19F1B /* WJBlueLists */;
-			targetProxy = 24CD14281CD9A2C200E19F1B /* PBXContainerItemProxy */;
-		};
-		24CD14341CD9A2C200E19F1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 24CD140D1CD9A2C200E19F1B /* WJBlueLists */;
-			targetProxy = 24CD14331CD9A2C200E19F1B /* PBXContainerItemProxy */;
-		};
 		5395140C1DE6930A0059F87A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 539513FF1DE6930A0059F87A /* WJBlueListWidget */;
@@ -765,54 +621,6 @@
 			};
 			name = Release;
 		};
-		24CD143F1CD9A2C200E19F1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WJBlueListsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueListsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WJBlueLists.app/WJBlueLists";
-			};
-			name = Debug;
-		};
-		24CD14401CD9A2C200E19F1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WJBlueListsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueListsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WJBlueLists.app/WJBlueLists";
-			};
-			name = Release;
-		};
-		24CD14421CD9A2C200E19F1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = WJBlueListsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueListsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = WJBlueLists;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		24CD14431CD9A2C200E19F1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = WJBlueListsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueListsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = WJBlueLists;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 		5395140E1DE6930A0059F87A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -872,24 +680,6 @@
 			buildConfigurations = (
 				24CD143C1CD9A2C200E19F1B /* Debug */,
 				24CD143D1CD9A2C200E19F1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		24CD143E1CD9A2C200E19F1B /* Build configuration list for PBXNativeTarget "WJBlueListsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				24CD143F1CD9A2C200E19F1B /* Debug */,
-				24CD14401CD9A2C200E19F1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		24CD14411CD9A2C200E19F1B /* Build configuration list for PBXNativeTarget "WJBlueListsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				24CD14421CD9A2C200E19F1B /* Debug */,
-				24CD14431CD9A2C200E19F1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
