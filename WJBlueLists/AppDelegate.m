@@ -23,7 +23,7 @@
     [na.navigationBar setBackgroundImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]
                              forBarMetrics:UIBarMetricsDefault];
     [na.navigationBar setTitleTextAttributes:@{
-                                                 NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:18],
+                                                 NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:17],
                                                  NSForegroundColorAttributeName : [UIColor whiteColor]
                                                  }];
     

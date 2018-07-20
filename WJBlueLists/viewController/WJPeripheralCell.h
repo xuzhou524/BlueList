@@ -8,7 +8,7 @@
 
 #import "WJBaseCell.h"
 
-@interface WJPeripheralCell : WJBaseCell
+@interface WJPeripheralCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *identifierLabel;

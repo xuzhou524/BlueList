@@ -8,6 +8,6 @@
 
 #import "WJBaseCV.h"
 
-@interface WJPeripheralVC : WJBaseCV
+@interface WJPeripheralVC : UIViewController
 
 @end

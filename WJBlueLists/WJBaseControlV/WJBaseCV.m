@@ -98,7 +98,6 @@
     return 60;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.tableDataArray count];
 }
@@ -112,9 +111,6 @@
     }
     return cell;
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

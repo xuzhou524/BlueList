@@ -22,17 +22,13 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.contentView.backgroundColor = [UIColor whiteColor];
         
-        
         UIView *lineView = [[UIView alloc]init];
-        lineView.backgroundColor = [UIColor colorWithHexString:@"c3c3c3"];
+        lineView.backgroundColor = [UIColor colorWithHexString:@"EAEAEA"];
         [self.contentView addSubview:lineView];
-        
         [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.right.equalTo(self.contentView);
-            make.left.equalTo(self.contentView).offset(10);
+            make.left.bottom.right.equalTo(self.contentView);
             make.height.equalTo(@1);
         }];
-        
         
         _arrowImageV = [[UIImageView alloc]init];
         [self.contentView addSubview:_arrowImageV];
@@ -42,12 +38,7 @@
             make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(-10);
         }];
-        
-        
     }
     return self;
 }
-
-
-
 @end
