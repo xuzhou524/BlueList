@@ -10,12 +10,14 @@
 #import "WJPeripheralCell.h"
 #import "OBDBluetooth.h"
 #import "WJServerVC.h"
+#define kPulseAnimation @"kPulseAnimation"
 
 @interface WJPeripheralVC ()<OBDBluetoothDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *tableDataArray;
 @property (nonatomic, strong) NSMutableArray *rissArray;
 @property (nonatomic, strong) UILabel *noPeripheralView;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIImageView * refreshImageView;
 @end
 
 @implementation WJPeripheralVC
@@ -25,6 +27,38 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navigationController.navigationBarHidden = YES;
+    
+    UIView * headNavView = [UIView new];
+    headNavView.backgroundColor = [UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1];
+    [self.view addSubview:headNavView];
+    [headNavView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self.view);
+        make.height.equalTo(@90);
+    }];
+    
+    _refreshImageView = [UIImageView new];
+    _refreshImageView.backgroundColor = [UIColor whiteColor];
+    _refreshImageView.alpha = 0.5;
+    _refreshImageView.layer.cornerRadius = 15;
+    _refreshImageView.userInteractionEnabled = YES;
+    [_refreshImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshClick)]];
+    [self.view addSubview:_refreshImageView];
+    [_refreshImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(headNavView).offset(-25);
+        make.bottom.equalTo(headNavView).offset(-20);
+        make.width.height.equalTo(@30);
+    }];
+    
+    UIView * pointView = [UIView new];
+    pointView.backgroundColor = [UIColor whiteColor];
+    pointView.layer.cornerRadius = 6;
+    [self.view addSubview:pointView];
+    [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(_refreshImageView);
+        make.width.height.equalTo(@12);
+    }];
+    
     _tableView = [UITableView new];
     _tableView.backgroundColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
     _tableView.dataSource = self;
@@ -32,12 +66,29 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.equalTo(self.view);
+        make.top.equalTo(headNavView.mas_bottom);
+        make.left.right.bottom.equalTo(self.view);
     }];
     
     //每次显示界面  重新设置代理  扫描设别
     [OBDBluetooth shareOBDBluetooth].delegate = self;
     [[OBDBluetooth shareOBDBluetooth] scanPeripheral];
+}
+
+-(void)refreshClick{
+    BOOL isAnimating = NO;
+    NSArray *layerArr = [NSArray arrayWithArray:_refreshImageView.superview.layer.sublayers];
+    for (CALayer *layer in layerArr) {
+        if ([layer.animationKeys containsObject:kPulseAnimation]) {
+            isAnimating = YES;
+            [layer removeAllAnimations];
+            [layer removeFromSuperlayer];
+        }
+    }
+    if (!isAnimating) {
+        [self waveAnimationLayerWithView:_refreshImageView diameter:180 duration:1.0];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidLoad {
@@ -73,7 +124,7 @@
 
 #pragma mark - tableview 代理方法
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 110;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -118,8 +169,10 @@
         }else {
             _noPeripheralView.hidden = NO;
         }
-        
-         [self.tableView reloadData];
+        if (self.tableDataArray.count <= 0) {
+             [[OBDBluetooth shareOBDBluetooth] stopPeripheral];
+            [self.tableView reloadData];
+        }
     });
 }
 
@@ -143,5 +196,40 @@
 
 - (void)readDataForString {
     LOG(@"读取到数据的 代理方法");
+}
+
+//diameter 扩散的大小
+- (CALayer *)waveAnimationLayerWithView:(UIView *)view diameter:(CGFloat)diameter duration:(CGFloat)duration {
+    CALayer *waveLayer = [CALayer layer];
+    waveLayer.bounds = CGRectMake(0, 0, diameter, diameter);
+    waveLayer.cornerRadius = diameter / 2; //设置圆角变为圆形
+    waveLayer.position = view.center;
+    waveLayer.backgroundColor = [[UIColor colorWithRed:255/ 255.0 green:255/ 255.0 blue:255/ 255.0 alpha:1] CGColor];
+    [view.superview.layer insertSublayer:waveLayer below:view.layer];//把扩散层放到播放按钮下面
+    
+    CAAnimationGroup * animationGroup = [CAAnimationGroup animation];
+    animationGroup.duration = duration;
+    animationGroup.repeatCount = INFINITY; //重复无限次
+    animationGroup.removedOnCompletion = NO;
+    
+    CAMediaTimingFunction *defaultCurve = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+    animationGroup.timingFunction = defaultCurve;
+    
+    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale.xy"];
+    scaleAnimation.fromValue = @0.0; //开始的大小
+    scaleAnimation.toValue = @0.4; //最后的大小
+    scaleAnimation.duration = duration;
+    scaleAnimation.removedOnCompletion = NO;
+    
+    CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opacityAnimation.fromValue = @1.0; //开始的大小
+    opacityAnimation.toValue = @0.0; //最后的大小
+    opacityAnimation.duration = duration;
+    opacityAnimation.removedOnCompletion = NO;
+    
+    animationGroup.animations = @[scaleAnimation, opacityAnimation];
+    [waveLayer addAnimation:animationGroup forKey:kPulseAnimation];
+    
+    return waveLayer;
 }
 @end

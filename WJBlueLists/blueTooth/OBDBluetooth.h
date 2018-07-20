@@ -48,6 +48,7 @@
 - (void)disconnectPeripheral:(CBPeripheral *)peripheral;
 //扫描设备
 - (void)scanPeripheral;
+- (void)stopPeripheral;
 
 
 //读数据

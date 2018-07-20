@@ -26,7 +26,6 @@
 }
 
 - (void)createCenterManager {
-    
     //异步的创建蓝牙控制中心
      _centerManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
     //主线程中
@@ -93,7 +92,6 @@
             LOG(@"此设备不支持BLE或未打开蓝牙功能");
             break;
     }
-    
 }
 
 
@@ -179,6 +177,9 @@
     [self.centerManager scanForPeripheralsWithServices:nil options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@YES}];
 }
 
+-(void)stopPeripheral{
+    [self.centerManager stopScan];
+}
 //读数据
 - (void)readCharacteristicValue:(CBCharacteristic *)characteristic {
     [self.peripheral readValueForCharacteristic:characteristic];
@@ -310,14 +311,11 @@
 
 - (void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
 {
-    if (error)
-    {
+    if (error){
         LOG(@"Error discovering services: %@", error);
         return;
     }
-    
-    for (CBService *service in [peripheral services])
-    {
+    for (CBService *service in [peripheral services]){
         //[ast stringByReplacingOccurrencesOfString:@" " withString:@""];
         
         //        NSString *string = [NSString stringWithFormat:@"%@",service.UUID.data];
@@ -325,29 +323,21 @@
         //        NSString*trimmedString = [string stringByTrimmingCharactersInSet:set];
         //        trimmedString = [trimmedString uppercaseString];
         //        //LOG(@"CBServiceCBServiceCBService : %@ uuid =  %@  %@  string = %@", service,service.UUID.data,service.UUID,trimmedString);
-        
-        
         [self.peripheral discoverCharacteristics:nil forService:service];
-        
     }
 }
 
 - (void) peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
-    if (error)
-    {
+    if (error){
         LOG(@"Error discovering characteristics: %@", error);
         return;
     }
-    
-    for (CBCharacteristic *c in [service characteristics])
-    {
-     
+    for (CBCharacteristic *c in [service characteristics]){
 //                [self.peripheral setNotifyValue:YES forCharacteristic:c];
         [self.peripheral readValueForCharacteristic:c];
         
         //        LOG(@"CBCharacteristicCBCharacteristicCBCharacteristic g characteristics: %@    uuid =  %@  %@", c,c.UUID.data,c.UUID);
-        
         [self getLasterCharacteristic:peripheral andCharacteristic:c];
     }
 }
@@ -359,7 +349,6 @@
         LOG(@"Error receiving notification for characteristic %@: %@", characteristic, error);
         return;
     }
-    
     // 第二次数据处理的写法 将返回的数据放到数组中 数组存放在字典中
     NSMutableArray * mutableArray = [self.readDataDic objectForKey:characteristic.UUID];
     if (!mutableArray) {
@@ -395,29 +384,18 @@
 //        [self.readDataDic setObject:[characteristic value] forKey:characteristic.UUID];
 //    }
     
-    
 //    [self.delegate readDataForString:[NSString stringWithFormat:@"%@",characteristic.value]];
     //[self getLasterCharacteristic:peripheral andCharacteristic:characteristic];
-    
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error {
-    
-    
-    if (error)
-    {
+    if (error){
         LOG(@"didUpdateNotificationStateForCharacteristic %@: %@", characteristic, error);
         return;
     }
 //    NSString *string = [NSString stringWithUTF8String:[[characteristic value] bytes]];
-    
-    
     LOG(@"didUpdateNotificationStateForCharacteristic === %@    ",[characteristic value] );
-
 }
-
-
-
 //判断最后一个特征值 然后跳转
 - (void)getLasterCharacteristic:(CBPeripheral *)peripheral andCharacteristic:(CBCharacteristic *)characteristic {
     //判断最后一个服务的最后一个特征值
@@ -443,18 +421,8 @@
     }
 }
 
-
-
-
-
-
 #pragma mark - 设备的代理方法
-- (void) didReceiveData:(NSString *)string
-{
+- (void) didReceiveData:(NSString *)string{
     [self.delegate didReceiveDataCenter:string];
 }
-
-
- 
-
 @end
