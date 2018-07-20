@@ -19,10 +19,29 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:[[WJPeripheralVC alloc] init]];
-    self.window.rootViewController = na;
     
-    // Override point for customization after application launch.
+    [na.navigationBar setBackgroundImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]
+                             forBarMetrics:UIBarMetricsDefault];
+    [na.navigationBar setTitleTextAttributes:@{
+                                                 NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:18],
+                                                 NSForegroundColorAttributeName : [UIColor whiteColor]
+                                                 }];
+    
+    self.window.rootViewController = na;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     return YES;
+}
+
+- (UIImage *)createImageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
