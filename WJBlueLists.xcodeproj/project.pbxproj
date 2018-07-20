@@ -29,6 +29,13 @@
 		24F962C81CEAF4B2007973CA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F962C71CEAF4B2007973CA /* back.png */; };
 		24F962CA1CEAFF15007973CA /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F962C91CEAFF15007973CA /* rightArrow.png */; };
 		24F962CD1CEB0605007973CA /* WJCharacteristicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F962CC1CEB0605007973CA /* WJCharacteristicCell.m */; };
+		539514021DE6930A0059F87A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539514011DE6930A0059F87A /* NotificationCenter.framework */; };
+		539514061DE6930A0059F87A /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539514051DE6930A0059F87A /* TodayViewController.m */; };
+		5395140D1DE6930A0059F87A /* WJBlueListWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 539514001DE6930A0059F87A /* WJBlueListWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		539514141DE694940059F87A /* longdaishequ_W@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 539514121DE694940059F87A /* longdaishequ_W@2x.png */; };
+		539514151DE694940059F87A /* longdaishequ_W@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 539514121DE694940059F87A /* longdaishequ_W@2x.png */; };
+		539514161DE694940059F87A /* longdaishequ_W@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 539514131DE694940059F87A /* longdaishequ_W@3x.png */; };
+		539514171DE694940059F87A /* longdaishequ_W@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 539514131DE694940059F87A /* longdaishequ_W@3x.png */; };
 		D1B3546C1E34E30EF73EE360 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CD05A38C923D2E889C4936 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +54,28 @@
 			remoteGlobalIDString = 24CD140D1CD9A2C200E19F1B;
 			remoteInfo = WJBlueLists;
 		};
+		5395140B1DE6930A0059F87A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CD14061CD9A2C200E19F1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 539513FF1DE6930A0059F87A;
+			remoteInfo = WJBlueListWidget;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		539514111DE6930A0059F87A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5395140D1DE6930A0059F87A /* WJBlueListWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2406C5191CE02F9B00AF6102 /* WJPeripheralVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJPeripheralVC.h; sourceTree = "<group>"; };
@@ -93,6 +121,13 @@
 		24F962CB1CEB0605007973CA /* WJCharacteristicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJCharacteristicCell.h; sourceTree = "<group>"; };
 		24F962CC1CEB0605007973CA /* WJCharacteristicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJCharacteristicCell.m; sourceTree = "<group>"; };
 		51CD05A38C923D2E889C4936 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		539514001DE6930A0059F87A /* WJBlueListWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WJBlueListWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		539514011DE6930A0059F87A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		539514041DE6930A0059F87A /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		539514051DE6930A0059F87A /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		5395140A1DE6930A0059F87A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		539514121DE694940059F87A /* longdaishequ_W@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "longdaishequ_W@2x.png"; sourceTree = "<group>"; };
+		539514131DE694940059F87A /* longdaishequ_W@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "longdaishequ_W@3x.png"; sourceTree = "<group>"; };
 		68B46E26F69C18F8B79F6080 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B7C49C649E9AB5B25F3E8F18 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +153,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		539513FD1DE6930A0059F87A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				539514021DE6930A0059F87A /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +201,7 @@
 				24CD14101CD9A2C200E19F1B /* WJBlueLists */,
 				24CD142A1CD9A2C200E19F1B /* WJBlueListsTests */,
 				24CD14351CD9A2C200E19F1B /* WJBlueListsUITests */,
+				539514031DE6930A0059F87A /* WJBlueListWidget */,
 				24CD140F1CD9A2C200E19F1B /* Products */,
 				AE5C6384AECBF650D359879A /* Pods */,
 				A5F35C8B72FD6EBCF66CB0BD /* Frameworks */,
@@ -171,6 +215,7 @@
 				24CD140E1CD9A2C200E19F1B /* WJBlueLists.app */,
 				24CD14271CD9A2C200E19F1B /* WJBlueListsTests.xctest */,
 				24CD14321CD9A2C200E19F1B /* WJBlueListsUITests.xctest */,
+				539514001DE6930A0059F87A /* WJBlueListWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,11 +298,24 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		539514031DE6930A0059F87A /* WJBlueListWidget */ = {
+			isa = PBXGroup;
+			children = (
+				539514121DE694940059F87A /* longdaishequ_W@2x.png */,
+				539514131DE694940059F87A /* longdaishequ_W@3x.png */,
+				539514041DE6930A0059F87A /* TodayViewController.h */,
+				539514051DE6930A0059F87A /* TodayViewController.m */,
+				5395140A1DE6930A0059F87A /* Info.plist */,
+			);
+			path = WJBlueListWidget;
+			sourceTree = "<group>";
+		};
 		A5F35C8B72FD6EBCF66CB0BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				24DB8FB31CEC516400700644 /* GoogleMobileAds.framework */,
 				51CD05A38C923D2E889C4936 /* libPods.a */,
+				539514011DE6930A0059F87A /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -284,10 +342,12 @@
 				24CD140C1CD9A2C200E19F1B /* Resources */,
 				56724DAC930423AEEB3782D5 /* Embed Pods Frameworks */,
 				0D24E44EFF421C9F117E0058 /* Copy Pods Resources */,
+				539514111DE6930A0059F87A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5395140C1DE6930A0059F87A /* PBXTargetDependency */,
 			);
 			name = WJBlueLists;
 			productName = WJBlueLists;
@@ -330,6 +390,23 @@
 			productReference = 24CD14321CD9A2C200E19F1B /* WJBlueListsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		539513FF1DE6930A0059F87A /* WJBlueListWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 539514101DE6930A0059F87A /* Build configuration list for PBXNativeTarget "WJBlueListWidget" */;
+			buildPhases = (
+				539513FC1DE6930A0059F87A /* Sources */,
+				539513FD1DE6930A0059F87A /* Frameworks */,
+				539513FE1DE6930A0059F87A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WJBlueListWidget;
+			productName = WJBlueListWidget;
+			productReference = 539514001DE6930A0059F87A /* WJBlueListWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -341,6 +418,8 @@
 				TargetAttributes = {
 					24CD140D1CD9A2C200E19F1B = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6JC78V6G2N;
+						ProvisioningStyle = Automatic;
 					};
 					24CD14261CD9A2C200E19F1B = {
 						CreatedOnToolsVersion = 7.2;
@@ -349,6 +428,11 @@
 					24CD14311CD9A2C200E19F1B = {
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = 24CD140D1CD9A2C200E19F1B;
+					};
+					539513FF1DE6930A0059F87A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 6JC78V6G2N;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -368,6 +452,7 @@
 				24CD140D1CD9A2C200E19F1B /* WJBlueLists */,
 				24CD14261CD9A2C200E19F1B /* WJBlueListsTests */,
 				24CD14311CD9A2C200E19F1B /* WJBlueListsUITests */,
+				539513FF1DE6930A0059F87A /* WJBlueListWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -377,6 +462,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				539514161DE694940059F87A /* longdaishequ_W@3x.png in Resources */,
+				539514141DE694940059F87A /* longdaishequ_W@2x.png in Resources */,
 				24CD14211CD9A2C200E19F1B /* LaunchScreen.storyboard in Resources */,
 				24CD141E1CD9A2C200E19F1B /* Assets.xcassets in Resources */,
 				24F962CA1CEAFF15007973CA /* rightArrow.png in Resources */,
@@ -396,6 +483,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		539513FE1DE6930A0059F87A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				539514151DE694940059F87A /* longdaishequ_W@2x.png in Resources */,
+				539514171DE694940059F87A /* longdaishequ_W@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +583,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		539513FC1DE6930A0059F87A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				539514061DE6930A0059F87A /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -499,6 +603,11 @@
 			isa = PBXTargetDependency;
 			target = 24CD140D1CD9A2C200E19F1B /* WJBlueLists */;
 			targetProxy = 24CD14331CD9A2C200E19F1B /* PBXContainerItemProxy */;
+		};
+		5395140C1DE6930A0059F87A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 539513FF1DE6930A0059F87A /* WJBlueListWidget */;
+			targetProxy = 5395140B1DE6930A0059F87A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -615,6 +724,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -625,7 +736,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13803bfd-bec6-4048-ae12-13e8c07f3fc4";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -637,6 +748,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -647,7 +760,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13803bfd-bec6-4048-ae12-13e8c07f3fc4";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -700,6 +813,48 @@
 			};
 			name = Release;
 		};
+		5395140E1DE6930A0059F87A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = WJBlueListWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists.WJBlueListWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5395140F1DE6930A0059F87A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = WJBlueListWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists.WJBlueListWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -735,6 +890,15 @@
 			buildConfigurations = (
 				24CD14421CD9A2C200E19F1B /* Debug */,
 				24CD14431CD9A2C200E19F1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		539514101DE6930A0059F87A /* Build configuration list for PBXNativeTarget "WJBlueListWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5395140E1DE6930A0059F87A /* Debug */,
+				5395140F1DE6930A0059F87A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
