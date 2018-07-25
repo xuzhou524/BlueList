@@ -27,37 +27,37 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.navigationController.navigationBarHidden = YES;
-    
-    UIView * headNavView = [UIView new];
-    headNavView.backgroundColor = [UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1];
-    [self.view addSubview:headNavView];
-    [headNavView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.equalTo(self.view);
-        make.height.equalTo(@90);
-    }];
-    
-    _refreshImageView = [UIImageView new];
-    _refreshImageView.backgroundColor = [UIColor whiteColor];
-    _refreshImageView.alpha = 0.5;
-    _refreshImageView.layer.cornerRadius = 15;
-    _refreshImageView.userInteractionEnabled = YES;
-    [_refreshImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshClick)]];
-    [self.view addSubview:_refreshImageView];
-    [_refreshImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(headNavView).offset(-25);
-        make.bottom.equalTo(headNavView).offset(-20);
-        make.width.height.equalTo(@30);
-    }];
-    
-    UIView * pointView = [UIView new];
-    pointView.backgroundColor = [UIColor whiteColor];
-    pointView.layer.cornerRadius = 6;
-    [self.view addSubview:pointView];
-    [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(_refreshImageView);
-        make.width.height.equalTo(@12);
-    }];
+//    self.navigationController.navigationBarHidden = YES;
+//
+//    UIView * headNavView = [UIView new];
+//    headNavView.backgroundColor = [UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1];
+//    [self.view addSubview:headNavView];
+//    [headNavView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.top.right.equalTo(self.view);
+//        make.height.equalTo(@90);
+//    }];
+//
+//    _refreshImageView = [UIImageView new];
+//    _refreshImageView.backgroundColor = [UIColor whiteColor];
+//    _refreshImageView.alpha = 0.5;
+//    _refreshImageView.layer.cornerRadius = 15;
+//    _refreshImageView.userInteractionEnabled = YES;
+//    [_refreshImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshClick)]];
+//    [self.view addSubview:_refreshImageView];
+//    [_refreshImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(headNavView).offset(-25);
+//        make.bottom.equalTo(headNavView).offset(-20);
+//        make.width.height.equalTo(@30);
+//    }];
+//
+//    UIView * pointView = [UIView new];
+//    pointView.backgroundColor = [UIColor whiteColor];
+//    pointView.layer.cornerRadius = 6;
+//    [self.view addSubview:pointView];
+//    [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(_refreshImageView);
+//        make.width.height.equalTo(@12);
+//    }];
     
     _tableView = [UITableView new];
     _tableView.backgroundColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
@@ -66,7 +66,7 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(headNavView.mas_bottom);
+        make.top.equalTo(self.view);
         make.left.right.bottom.equalTo(self.view);
     }];
     
@@ -169,10 +169,10 @@
         }else {
             _noPeripheralView.hidden = NO;
         }
-        if (self.tableDataArray.count <= 0) {
-             [[OBDBluetooth shareOBDBluetooth] stopPeripheral];
+        //if (self.tableDataArray.count <= 0) {
+        //     [[OBDBluetooth shareOBDBluetooth] stopPeripheral];
             [self.tableView reloadData];
-        }
+        //}
     });
 }
 
