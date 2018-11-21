@@ -73,14 +73,13 @@
 
 -(void)setBarItem {
     //设置左侧返回按钮
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(11, 11, 22, 22)];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-    backButton.tag = -1;
-//    [backButton setTitle:@"返回" forState:UIControlStateNormal];
-    [backButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [self.navigationItem setLeftBarButtonItem:backItem];
+    UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+    [liftBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    liftBtn.tag = -1;
+    liftBtn.imageEdgeInsets = UIEdgeInsetsMake( 2, 0, 2, 5);
+    [liftBtn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * liftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftBtn];
+    self.navigationItem.leftBarButtonItem = liftButtonItem;
 }
 
 //导航栏上的BarButtonItem的响应事件

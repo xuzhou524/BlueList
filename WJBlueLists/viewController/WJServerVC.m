@@ -34,14 +34,23 @@
     
     
     //创建头文件  tableview的头
-    UIView * sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 80)];
+    UIView * sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60)];
 //    sectionView.backgroundColor = [UIColor orangeColor];
-    UILabel * label = [[UILabel alloc]init];
-    label.frame = CGRectMake(10, 0, SCREEN_WIDTH - 15, 80);
-    label.numberOfLines = 0;
-    label.text = [NSString stringWithFormat:@"设备名: %@\nUUID: %@",[OBDBluetooth shareOBDBluetooth].peripheral.name,[OBDBluetooth shareOBDBluetooth].peripheral.identifier.UUIDString];
+    UILabel * nameLabel = [[UILabel alloc]init];
+    nameLabel.frame = CGRectMake(10, 10, SCREEN_WIDTH - 15, 25);
+    nameLabel.font = [UIFont systemFontOfSize:16];
+    nameLabel.textColor = [UIColor colorWithHexString:@"3d3d3d"];
+    nameLabel.text = [NSString stringWithFormat:@"设备名: %@",[OBDBluetooth shareOBDBluetooth].peripheral.name];
+    [sectionView addSubview:nameLabel];
     
-    [sectionView addSubview:label];
+    UILabel * UUIDLabel = [[UILabel alloc]init];
+    UUIDLabel.frame = CGRectMake(10, 35, SCREEN_WIDTH - 15, 25);
+    UUIDLabel.numberOfLines = 0;
+    UUIDLabel.font = [UIFont systemFontOfSize:14];
+    UUIDLabel.textColor = [UIColor colorWithHexString:@"3d3d3d"];
+    UUIDLabel.text = [NSString stringWithFormat:@"UUID: %@",[OBDBluetooth shareOBDBluetooth].peripheral.identifier.UUIDString];
+    [sectionView addSubview:UUIDLabel];
+    
     [self.baseTableVC setTableHeaderView:sectionView];
     [self setBarItem];
     
@@ -144,10 +153,7 @@
      */
     //字符串第二次处理
     
-    
-    
-    
-    
+
     //字符串的处理
     NSCharacterSet*set = [NSCharacterSet characterSetWithCharactersInString:@"<>"];
     uuidS = [uuidS  stringByReplacingOccurrencesOfString:@"-" withString:@""];
@@ -232,10 +238,12 @@
 }
 
 - (void)didDisconnectPeripheral {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//        [self.navigationController popViewControllerAnimated:YES];
+//    });
+    
+    LOG(@"返回");
 }
 
 - (void)readDataForString {
