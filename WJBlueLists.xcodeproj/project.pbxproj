@@ -27,6 +27,16 @@
 		24F962C81CEAF4B2007973CA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F962C71CEAF4B2007973CA /* back.png */; };
 		24F962CA1CEAFF15007973CA /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F962C91CEAFF15007973CA /* rightArrow.png */; };
 		24F962CD1CEB0605007973CA /* WJCharacteristicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F962CC1CEB0605007973CA /* WJCharacteristicCell.m */; };
+		535894C221A504480047A306 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535894C021A504480047A306 /* Interface.storyboard */; };
+		535894C421A504490047A306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535894C321A504490047A306 /* Assets.xcassets */; };
+		535894CB21A504490047A306 /* WJBlueListsWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 535894CA21A504490047A306 /* WJBlueListsWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		535894DE21A5044A0047A306 /* WJBlueListsWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 535894BE21A504480047A306 /* WJBlueListsWatch.app */; };
+		535894F121A504660047A306 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 535894E821A504660047A306 /* PushNotificationPayload.apns */; };
+		535894F221A504660047A306 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 535894E921A504660047A306 /* ExtensionDelegate.m */; };
+		535894F321A504660047A306 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 535894EA21A504660047A306 /* NotificationController.m */; };
+		535894F421A504660047A306 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 535894EB21A504660047A306 /* InterfaceController.m */; };
+		535894F521A504660047A306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535894EC21A504660047A306 /* Assets.xcassets */; };
+		535894F621A504660047A306 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 535894F021A504660047A306 /* Info.plist */; };
 		539514021DE6930A0059F87A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539514011DE6930A0059F87A /* NotificationCenter.framework */; };
 		539514061DE6930A0059F87A /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539514051DE6930A0059F87A /* TodayViewController.m */; };
 		5395140D1DE6930A0059F87A /* WJBlueListWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 539514001DE6930A0059F87A /* WJBlueListWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -38,6 +48,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		535894CC21A504490047A306 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CD14061CD9A2C200E19F1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 535894C921A504490047A306;
+			remoteInfo = "WJBlueListsWatch Extension";
+		};
+		535894DC21A5044A0047A306 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CD14061CD9A2C200E19F1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 535894BD21A504480047A306;
+			remoteInfo = WJBlueListsWatch;
+		};
 		5395140B1DE6930A0059F87A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24CD14061CD9A2C200E19F1B /* Project object */;
@@ -48,6 +72,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		535894E421A5044A0047A306 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				535894CB21A504490047A306 /* WJBlueListsWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535894E621A5044A0047A306 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				535894DE21A5044A0047A306 /* WJBlueListsWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		539514111DE6930A0059F87A /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +145,20 @@
 		24F962CB1CEB0605007973CA /* WJCharacteristicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJCharacteristicCell.h; sourceTree = "<group>"; };
 		24F962CC1CEB0605007973CA /* WJCharacteristicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJCharacteristicCell.m; sourceTree = "<group>"; };
 		51CD05A38C923D2E889C4936 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		535894BE21A504480047A306 /* WJBlueListsWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WJBlueListsWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		535894C121A504480047A306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		535894C321A504490047A306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		535894C521A504490047A306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		535894CA21A504490047A306 /* WJBlueListsWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WJBlueListsWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		535894E821A504660047A306 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		535894E921A504660047A306 /* ExtensionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		535894EA21A504660047A306 /* NotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		535894EB21A504660047A306 /* InterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		535894EC21A504660047A306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		535894ED21A504660047A306 /* ExtensionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		535894EE21A504660047A306 /* NotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		535894EF21A504660047A306 /* InterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		535894F021A504660047A306 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		539514001DE6930A0059F87A /* WJBlueListWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WJBlueListWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		539514011DE6930A0059F87A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		539514041DE6930A0059F87A /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -117,6 +177,13 @@
 			files = (
 				24DB8FB41CEC516400700644 /* GoogleMobileAds.framework in Frameworks */,
 				D1B3546C1E34E30EF73EE360 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535894C721A504490047A306 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +229,10 @@
 		24CD14051CD9A2C200E19F1B = {
 			isa = PBXGroup;
 			children = (
+				535894E721A504660047A306 /* WJBlueListsWatch Extension */,
 				24CD14101CD9A2C200E19F1B /* WJBlueLists */,
 				539514031DE6930A0059F87A /* WJBlueListWidget */,
+				535894BF21A504480047A306 /* WJBlueListsWatch */,
 				24CD140F1CD9A2C200E19F1B /* Products */,
 				AE5C6384AECBF650D359879A /* Pods */,
 				A5F35C8B72FD6EBCF66CB0BD /* Frameworks */,
@@ -176,6 +245,8 @@
 			children = (
 				24CD140E1CD9A2C200E19F1B /* WJBlueLists.app */,
 				539514001DE6930A0059F87A /* WJBlueListWidget.appex */,
+				535894BE21A504480047A306 /* WJBlueListsWatch.app */,
+				535894CA21A504490047A306 /* WJBlueListsWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +311,32 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		535894BF21A504480047A306 /* WJBlueListsWatch */ = {
+			isa = PBXGroup;
+			children = (
+				535894C021A504480047A306 /* Interface.storyboard */,
+				535894C321A504490047A306 /* Assets.xcassets */,
+				535894C521A504490047A306 /* Info.plist */,
+			);
+			path = WJBlueListsWatch;
+			sourceTree = "<group>";
+		};
+		535894E721A504660047A306 /* WJBlueListsWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				535894E821A504660047A306 /* PushNotificationPayload.apns */,
+				535894E921A504660047A306 /* ExtensionDelegate.m */,
+				535894EA21A504660047A306 /* NotificationController.m */,
+				535894EB21A504660047A306 /* InterfaceController.m */,
+				535894EC21A504660047A306 /* Assets.xcassets */,
+				535894ED21A504660047A306 /* ExtensionDelegate.h */,
+				535894EE21A504660047A306 /* NotificationController.h */,
+				535894EF21A504660047A306 /* InterfaceController.h */,
+				535894F021A504660047A306 /* Info.plist */,
+			);
+			path = "WJBlueListsWatch Extension";
+			sourceTree = "<group>";
+		};
 		539514031DE6930A0059F87A /* WJBlueListWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,16 +382,52 @@
 				56724DAC930423AEEB3782D5 /* Embed Pods Frameworks */,
 				0D24E44EFF421C9F117E0058 /* Copy Pods Resources */,
 				539514111DE6930A0059F87A /* Embed App Extensions */,
+				535894E621A5044A0047A306 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5395140C1DE6930A0059F87A /* PBXTargetDependency */,
+				535894DD21A5044A0047A306 /* PBXTargetDependency */,
 			);
 			name = WJBlueLists;
 			productName = WJBlueLists;
 			productReference = 24CD140E1CD9A2C200E19F1B /* WJBlueLists.app */;
 			productType = "com.apple.product-type.application";
+		};
+		535894BD21A504480047A306 /* WJBlueListsWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 535894E521A5044A0047A306 /* Build configuration list for PBXNativeTarget "WJBlueListsWatch" */;
+			buildPhases = (
+				535894BC21A504480047A306 /* Resources */,
+				535894E421A5044A0047A306 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				535894CD21A504490047A306 /* PBXTargetDependency */,
+			);
+			name = WJBlueListsWatch;
+			productName = WJBlueListsWatch;
+			productReference = 535894BE21A504480047A306 /* WJBlueListsWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		535894C921A504490047A306 /* WJBlueListsWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 535894E321A5044A0047A306 /* Build configuration list for PBXNativeTarget "WJBlueListsWatch Extension" */;
+			buildPhases = (
+				535894C621A504490047A306 /* Sources */,
+				535894C721A504490047A306 /* Frameworks */,
+				535894C821A504490047A306 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WJBlueListsWatch Extension";
+			productName = "WJBlueListsWatch Extension";
+			productReference = 535894CA21A504490047A306 /* WJBlueListsWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		539513FF1DE6930A0059F87A /* WJBlueListWidget */ = {
 			isa = PBXNativeTarget;
@@ -327,6 +460,16 @@
 						DevelopmentTeam = 6JC78V6G2N;
 						ProvisioningStyle = Automatic;
 					};
+					535894BD21A504480047A306 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 6JC78V6G2N;
+						ProvisioningStyle = Automatic;
+					};
+					535894C921A504490047A306 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 6JC78V6G2N;
+						ProvisioningStyle = Automatic;
+					};
 					539513FF1DE6930A0059F87A = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 6JC78V6G2N;
@@ -349,6 +492,8 @@
 			targets = (
 				24CD140D1CD9A2C200E19F1B /* WJBlueLists */,
 				539513FF1DE6930A0059F87A /* WJBlueListWidget */,
+				535894BD21A504480047A306 /* WJBlueListsWatch */,
+				535894C921A504490047A306 /* WJBlueListsWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -363,8 +508,27 @@
 				24CD14211CD9A2C200E19F1B /* LaunchScreen.storyboard in Resources */,
 				24CD141E1CD9A2C200E19F1B /* Assets.xcassets in Resources */,
 				24F962CA1CEAFF15007973CA /* rightArrow.png in Resources */,
+				535894F121A504660047A306 /* PushNotificationPayload.apns in Resources */,
 				24F962C81CEAF4B2007973CA /* back.png in Resources */,
+				535894F521A504660047A306 /* Assets.xcassets in Resources */,
+				535894F621A504660047A306 /* Info.plist in Resources */,
 				24CD141C1CD9A2C200E19F1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535894BC21A504480047A306 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535894C421A504490047A306 /* Assets.xcassets in Resources */,
+				535894C221A504480047A306 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535894C821A504490047A306 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,14 +602,24 @@
 				24F962CD1CEB0605007973CA /* WJCharacteristicCell.m in Sources */,
 				24B9F3A51CE466410032EAA4 /* UIColor+WJColor.m in Sources */,
 				2406C51B1CE02F9B00AF6102 /* WJPeripheralVC.m in Sources */,
+				535894F221A504660047A306 /* ExtensionDelegate.m in Sources */,
 				24B9F3A81CE46A6A0032EAA4 /* WJServerCell.m in Sources */,
 				24EA438D1CE1BAD000DC1C57 /* WJServerVC.m in Sources */,
 				2406C51E1CE031D100AF6102 /* WJBaseCell.m in Sources */,
+				535894F421A504660047A306 /* InterfaceController.m in Sources */,
 				24CD14191CD9A2C200E19F1B /* ViewController.m in Sources */,
 				24CD14161CD9A2C200E19F1B /* AppDelegate.m in Sources */,
 				24243BE21CE5CEF60005BA55 /* WJCharacteristicVC.m in Sources */,
 				24CD14491CD9A31B00E19F1B /* BluetoothPeripheral.m in Sources */,
+				535894F321A504660047A306 /* NotificationController.m in Sources */,
 				24CD14131CD9A2C200E19F1B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535894C621A504490047A306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +634,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		535894CD21A504490047A306 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 535894C921A504490047A306 /* WJBlueListsWatch Extension */;
+			targetProxy = 535894CC21A504490047A306 /* PBXContainerItemProxy */;
+		};
+		535894DD21A5044A0047A306 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 535894BD21A504480047A306 /* WJBlueListsWatch */;
+			targetProxy = 535894DC21A5044A0047A306 /* PBXContainerItemProxy */;
+		};
 		5395140C1DE6930A0059F87A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 539513FF1DE6930A0059F87A /* WJBlueListWidget */;
@@ -482,6 +666,14 @@
 				24CD14201CD9A2C200E19F1B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		535894C021A504480047A306 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				535894C121A504480047A306 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -621,6 +813,152 @@
 			};
 			name = Release;
 		};
+		535894DF21A5044A0047A306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = WJBlueListsWatch_Extension;
+				INFOPLIST_FILE = WJBlueListsWatch/Info.plist;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		535894E021A5044A0047A306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = WJBlueListsWatch_Extension;
+				INFOPLIST_FILE = WJBlueListsWatch/Info.plist;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		535894E121A5044A0047A306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "WJBlueListsWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		535894E221A5044A0047A306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "WJBlueListsWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
 		5395140E1DE6930A0059F87A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -680,6 +1018,24 @@
 			buildConfigurations = (
 				24CD143C1CD9A2C200E19F1B /* Debug */,
 				24CD143D1CD9A2C200E19F1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		535894E321A5044A0047A306 /* Build configuration list for PBXNativeTarget "WJBlueListsWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535894E121A5044A0047A306 /* Debug */,
+				535894E221A5044A0047A306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		535894E521A5044A0047A306 /* Build configuration list for PBXNativeTarget "WJBlueListsWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535894DF21A5044A0047A306 /* Debug */,
+				535894E021A5044A0047A306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
