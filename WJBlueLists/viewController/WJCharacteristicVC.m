@@ -38,8 +38,13 @@
     
     [sectionView addSubview:label];
     [self.baseTableVC setTableHeaderView:sectionView];
+    [self setBarItem];
     
-    
+}
+
+- (void)onClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 #pragma mark - 属性 懒加载
@@ -131,12 +136,7 @@
     }else {
         return [self.sectionTitleArray count] - 1;
     }
- 
-    
-    
-
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     

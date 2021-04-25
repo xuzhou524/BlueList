@@ -27,38 +27,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    self.navigationController.navigationBarHidden = YES;
-//
-//    UIView * headNavView = [UIView new];
-//    headNavView.backgroundColor = [UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1];
-//    [self.view addSubview:headNavView];
-//    [headNavView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.top.right.equalTo(self.view);
-//        make.height.equalTo(@90);
-//    }];
-//
-//    _refreshImageView = [UIImageView new];
-//    _refreshImageView.backgroundColor = [UIColor whiteColor];
-//    _refreshImageView.alpha = 0.5;
-//    _refreshImageView.layer.cornerRadius = 15;
-//    _refreshImageView.userInteractionEnabled = YES;
-//    [_refreshImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshClick)]];
-//    [self.view addSubview:_refreshImageView];
-//    [_refreshImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.equalTo(headNavView).offset(-25);
-//        make.bottom.equalTo(headNavView).offset(-20);
-//        make.width.height.equalTo(@30);
-//    }];
-//
-//    UIView * pointView = [UIView new];
-//    pointView.backgroundColor = [UIColor whiteColor];
-//    pointView.layer.cornerRadius = 6;
-//    [self.view addSubview:pointView];
-//    [pointView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(_refreshImageView);
-//        make.width.height.equalTo(@12);
-//    }];
-    
     _tableView = [UITableView new];
     _tableView.backgroundColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
     _tableView.dataSource = self;
@@ -179,11 +147,9 @@
 -(void)nextVC {
     dispatch_async(dispatch_get_main_queue(), ^{
         LOG(@"界面跳转");
+        [self.navigationController pushViewController:[[WJServerVC alloc]init] animated:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    
-            [self.navigationController pushViewController:[[WJServerVC alloc]init] animated:YES];
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            
         });
     });
 }

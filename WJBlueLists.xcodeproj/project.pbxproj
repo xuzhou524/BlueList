@@ -24,8 +24,6 @@
 		24CD144F1CD9B2C500E19F1B /* WJBaseCV.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CD144E1CD9B2C500E19F1B /* WJBaseCV.m */; };
 		24DB8FB41CEC516400700644 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB8FB31CEC516400700644 /* GoogleMobileAds.framework */; };
 		24EA438D1CE1BAD000DC1C57 /* WJServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EA438C1CE1BAD000DC1C57 /* WJServerVC.m */; };
-		24F962C81CEAF4B2007973CA /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F962C71CEAF4B2007973CA /* back.png */; };
-		24F962CA1CEAFF15007973CA /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F962C91CEAFF15007973CA /* rightArrow.png */; };
 		24F962CD1CEB0605007973CA /* WJCharacteristicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F962CC1CEB0605007973CA /* WJCharacteristicCell.m */; };
 		539514021DE6930A0059F87A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539514011DE6930A0059F87A /* NotificationCenter.framework */; };
 		539514061DE6930A0059F87A /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539514051DE6930A0059F87A /* TodayViewController.m */; };
@@ -103,8 +101,6 @@
 		24DB8FB31CEC516400700644 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		24EA438B1CE1BAD000DC1C57 /* WJServerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJServerVC.h; sourceTree = "<group>"; };
 		24EA438C1CE1BAD000DC1C57 /* WJServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJServerVC.m; sourceTree = "<group>"; };
-		24F962C71CEAF4B2007973CA /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		24F962C91CEAFF15007973CA /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		24F962CB1CEB0605007973CA /* WJCharacteristicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJCharacteristicCell.h; sourceTree = "<group>"; };
 		24F962CC1CEB0605007973CA /* WJCharacteristicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJCharacteristicCell.m; sourceTree = "<group>"; };
 		539514001DE6930A0059F87A /* WJBlueListWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WJBlueListWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,7 +189,6 @@
 				539514031DE6930A0059F87A /* WJBlueListWidget */,
 				24CD140F1CD9A2C200E19F1B /* Products */,
 				A5F35C8B72FD6EBCF66CB0BD /* Frameworks */,
-				24F962C61CEAF46A007973CA /* Resource */,
 				AA3E851A3375F56098328E43 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -257,15 +252,6 @@
 				2406C51D1CE031D100AF6102 /* WJBaseCell.m */,
 			);
 			path = WJBaseControlV;
-			sourceTree = "<group>";
-		};
-		24F962C61CEAF46A007973CA /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				24F962C91CEAFF15007973CA /* rightArrow.png */,
-				24F962C71CEAF4B2007973CA /* back.png */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		539514031DE6930A0059F87A /* WJBlueListWidget */ = {
@@ -415,8 +401,6 @@
 				539514141DE694940059F87A /* longdaishequ_W@2x.png in Resources */,
 				24CD14211CD9A2C200E19F1B /* LaunchScreen.storyboard in Resources */,
 				24CD141E1CD9A2C200E19F1B /* Assets.xcassets in Resources */,
-				24F962CA1CEAFF15007973CA /* rightArrow.png in Resources */,
-				24F962C81CEAF4B2007973CA /* back.png in Resources */,
 				24CD141C1CD9A2C200E19F1B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +624,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -649,6 +634,7 @@
 				INFOPLIST_FILE = WJBlueLists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -664,6 +650,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,6 +660,7 @@
 				INFOPLIST_FILE = WJBlueLists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

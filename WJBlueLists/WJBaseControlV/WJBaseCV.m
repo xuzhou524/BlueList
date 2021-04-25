@@ -73,10 +73,12 @@
 
 -(void)setBarItem {
     //设置左侧返回按钮
-    UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
-    [liftBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    UIButton *liftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    UIImage * image = [[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    liftBtn.tintColor = [UIColor whiteColor];
+    [liftBtn setBackgroundImage:image forState:UIControlStateNormal];
     liftBtn.tag = -1;
-    liftBtn.imageEdgeInsets = UIEdgeInsetsMake( 2, 0, 2, 5);
+//    liftBtn.imageEdgeInsets = UIEdgeInsetsMake(5, 0, -5, 5);
     [liftBtn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * liftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftBtn];
     self.navigationItem.leftBarButtonItem = liftButtonItem;

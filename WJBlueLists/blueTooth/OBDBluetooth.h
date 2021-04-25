@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@protocol OBDBluetoothDelegate
+@protocol OBDBluetoothDelegate <NSObject>
 
 @optional
 - (void) reloadTableView:(NSMutableArray *) peripheralA andRissArray:(NSMutableArray *)rissArray;
@@ -32,7 +32,7 @@
 @property (nonatomic, assign) BOOL blueState;
 @property (strong,nonatomic) NSMutableArray *peripherals;
 @property (nonatomic, strong) NSMutableArray *rissArray;
-@property (nonatomic, strong) id<OBDBluetoothDelegate> delegate;
+@property (nonatomic, weak) id<OBDBluetoothDelegate> delegate;
 
 //服务  特征 数组
 @property (nonatomic, strong) NSMutableArray *serCharArray;

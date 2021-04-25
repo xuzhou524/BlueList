@@ -32,7 +32,6 @@
     
     self.sectonArray = [OBDBluetooth shareOBDBluetooth].peripheral.services;
     
-    
     //创建头文件  tableview的头
     UIView * sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60)];
 //    sectionView.backgroundColor = [UIColor orangeColor];
@@ -58,11 +57,9 @@
 }
 
 - (void)onClick:(id)sender {
-    [[OBDBluetooth shareOBDBluetooth] disconnectPeripheral:nil];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-}
+    [self.navigationController popViewControllerAnimated:YES];
 
+}
 
 #pragma mark - 属性
 - (NSArray *)sectonArray {
@@ -71,7 +68,6 @@
     }
     return _sectonArray;
 }
-
 
 #pragma mark - tableview 代理方法
 
@@ -110,7 +106,6 @@
    
     return 60;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     CBService *service = [self.sectonArray objectAtIndex:section];
@@ -210,18 +205,15 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   
     
     CBService *service = [self.sectonArray objectAtIndex:indexPath.section];
     NSArray *characArray = service.characteristics;
     WJCharacteristicVC * characVC = [[WJCharacteristicVC alloc]init];
     characVC.characteristic =[characArray objectAtIndex:indexPath.row];
     
-    
     [self.navigationController pushViewController:characVC animated:YES];
    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -231,10 +223,7 @@
 
 - (void)nextVC {
 //刷新界面
-    
     LOG(@"刷新界面");
-    
-    
 }
 
 - (void)didDisconnectPeripheral {
@@ -274,7 +263,6 @@
     
     NSString * proertiesString = nil;
  
-    
     NSArray * stringArray = @[@"需要加密的申请",@"需要加密的通知",@"拓展",@"通过验证的",@"声明",@"订阅",@"可写",@"写无回复",@"可读",@"可广播"];
     NSArray *dataArray = @[@512,@256,@128,@64,@32,@16,@8,@4,@2,@1];
     for(int i = 0; i < [stringArray count]; i ++ ) {

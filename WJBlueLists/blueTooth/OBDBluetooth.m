@@ -125,21 +125,19 @@
         }
 //        LOG(@"RSSI = %@",RSSI);
         //刷新tableView
-        [self.delegate reloadTableView:self.peripherals andRissArray:self.rissArray];
+        if (_delegate && [_delegate respondsToSelector:@selector(reloadTableView:andRissArray:)] ) {
+            [self.delegate reloadTableView:self.peripherals andRissArray:self.rissArray];
+        }
     }
 }
 
-
-- (void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
-{
+- (void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
      LOG(@"Did connect peripheral %@", peripheral.name);
     self.peripheral = peripheral;
     //链接成功后  停止扫描
     [self.centerManager stopScan];
     peripheral.delegate = self;
     [peripheral discoverServices:nil];
-    
-    
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error {
