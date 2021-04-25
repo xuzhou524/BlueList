@@ -1,0 +1,6 @@
+framework module Pods_WJBlueLists {
+  umbrella header "Pods-WJBlueLists-umbrella.h"
+
+  export *
+  module * { export * }
+}

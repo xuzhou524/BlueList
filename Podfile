@@ -1,4 +1,13 @@
-platform :ios,'7.0'
+platform :ios,'11.0'
+inhibit_all_warnings!
+use_frameworks!
 
-pod 'MBProgressHUD', '~> 0.9.2'
-pod 'Masonry', '~> 1.0.0'
+def pods
+   pod 'Masonry'
+   pod 'MBProgressHUD'
+end
+
+
+target 'WJBlueLists' do
+    pods
+end
