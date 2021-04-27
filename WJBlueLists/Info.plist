@@ -43,9 +43,9 @@
 		<true/>
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>是否允许蓝牙猫访问您的蓝牙？</string>
+	<string>是否允许蓝牙猫访问您的蓝牙用于搜索附近的蓝牙设备？</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>是否允许蓝牙猫访问您的蓝牙？</string>
+	<string>是否允许蓝牙猫访问您的蓝牙用于搜索附近的蓝牙设备？</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>是否允许蓝牙猫访问您的日历？</string>
 	<key>UIMainStoryboardFile</key>
