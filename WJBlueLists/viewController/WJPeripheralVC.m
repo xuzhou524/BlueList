@@ -37,6 +37,7 @@
         make.top.equalTo(self.view);
         make.left.right.bottom.equalTo(self.view);
     }];
+    [self.view bringSubviewToFront:_noPeripheralView];
     
     //每次显示界面  重新设置代理  扫描设别
     [OBDBluetooth shareOBDBluetooth].delegate = self;
@@ -64,12 +65,14 @@
     self.title = @"首页";
     
     //在没有搜索到设备的时候  提示用户没有搜索到设备
-    _noPeripheralView  = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 250)];
-    _noPeripheralView.text = @"亲\n\n搜索不到设备！\n\n请打开您要连接的设备";
-    _noPeripheralView.font = WJFont(18);
-    _noPeripheralView.textAlignment = NSTextAlignmentCenter;
+    _noPeripheralView  = [[UILabel alloc]initWithFrame:CGRectMake(25, 50, [UIScreen mainScreen].bounds.size.width - 50, 250)];
+    _noPeripheralView.text = @"暂时还未搜索到附近蓝牙设备！请检查如下可能：\n\n1.检查手机是否打开蓝牙功能;\n\n2.检查App是否开启蓝牙权限;\n\n3.请打开您要连接的蓝牙设备.";
+    _noPeripheralView.font = WJFont(13);
+    _noPeripheralView.textColor = [UIColor grayColor];
+    _noPeripheralView.textAlignment = NSTextAlignmentLeft;
     _noPeripheralView.numberOfLines = 0;
     [self.view addSubview:_noPeripheralView];
+    [self.view bringSubviewToFront:_noPeripheralView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,7 +135,7 @@
     self.tableDataArray = peripheralA;
     self.rissArray = rissArray;
     dispatch_async(dispatch_get_main_queue(), ^{
-        if ([self.tableDataArray count] > 0) {
+        if (self.tableDataArray.count > 0 && self.rissArray.count > 0 && self.tableDataArray.count == self.rissArray.count) {
             _noPeripheralView.hidden = YES;
         }else {
             _noPeripheralView.hidden = NO;
