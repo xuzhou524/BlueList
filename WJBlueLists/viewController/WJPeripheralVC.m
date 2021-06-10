@@ -12,21 +12,25 @@
 #import "WJServerVC.h"
 #define kPulseAnimation @"kPulseAnimation"
 
+@import GoogleMobileAds;
+
 @interface WJPeripheralVC ()<OBDBluetoothDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *tableDataArray;
 @property (nonatomic, strong) NSMutableArray *rissArray;
 @property (nonatomic, strong) UILabel *noPeripheralView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIImageView * refreshImageView;
+
+@property(nonatomic, strong) GADBannerView *bannerView;
 @end
 
 @implementation WJPeripheralVC
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     self.view.backgroundColor = [UIColor whiteColor];
-    
+
     _tableView = [UITableView new];
     _tableView.backgroundColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
     _tableView.dataSource = self;
@@ -35,13 +39,19 @@
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view);
-        make.left.right.bottom.equalTo(self.view);
+        make.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-70);
     }];
     [self.view bringSubviewToFront:_noPeripheralView];
-    
+
     //每次显示界面  重新设置代理  扫描设别
     [OBDBluetooth shareOBDBluetooth].delegate = self;
     [[OBDBluetooth shareOBDBluetooth] scanPeripheral];
+#ifdef DEBUG
+#else
+    [self createAdView];
+#endif
+    
 }
 
 -(void)refreshClick{
@@ -60,10 +70,19 @@
     }
 }
 
+-(void)createAdView{
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 320)/2.00, SCREEN_HEIGHT - 150,320 , 50)];
+    self.bannerView.adSize = kGADAdSizeBanner;
+    [self.view addSubview:self.bannerView];
+    self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/4408139710";
+    self.bannerView.rootViewController = self;
+    [self.bannerView loadRequest:[GADRequest request]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"首页";
-    
+
     //在没有搜索到设备的时候  提示用户没有搜索到设备
     _noPeripheralView  = [[UILabel alloc]initWithFrame:CGRectMake(25, 50, [UIScreen mainScreen].bounds.size.width - 50, 250)];
     _noPeripheralView.text = @"暂时还未搜索到附近蓝牙设备！请检查如下可能：\n\n1.检查手机是否打开蓝牙功能;\n\n2.检查App是否开启蓝牙权限;\n\n3.请打开您要连接的蓝牙设备.";
@@ -73,6 +92,7 @@
     _noPeripheralView.numberOfLines = 0;
     [self.view addSubview:_noPeripheralView];
     [self.view bringSubviewToFront:_noPeripheralView];
+
 }
 
 - (void)didReceiveMemoryWarning {

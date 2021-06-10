@@ -8,16 +8,15 @@
 
 #import "AppDelegate.h"
 #import "WJPeripheralVC.h"
-
-@interface AppDelegate ()
-
-@end
+@import GoogleMobileAds;
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+#ifdef DEBUG
+#else
+    [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
+#endif
     UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:[[WJPeripheralVC alloc] init]];
     
     [na.navigationBar setBackgroundImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]

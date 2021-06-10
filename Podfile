@@ -5,6 +5,7 @@ use_frameworks!
 def pods
    pod 'Masonry'
    pod 'MBProgressHUD'
+   pod 'Google-Mobile-Ads-SDK'
 end
 
 
