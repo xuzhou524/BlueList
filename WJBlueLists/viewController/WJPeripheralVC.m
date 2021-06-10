@@ -10,6 +10,7 @@
 #import "WJPeripheralCell.h"
 #import "OBDBluetooth.h"
 #import "WJServerVC.h"
+#import "SettingViewController.h"
 #define kPulseAnimation @"kPulseAnimation"
 
 @import GoogleMobileAds;
@@ -92,7 +93,20 @@
     _noPeripheralView.numberOfLines = 0;
     [self.view addSubview:_noPeripheralView];
     [self.view bringSubviewToFront:_noPeripheralView];
+    
+    UIButton * rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIImage * addIamge = [[UIImage imageNamed:@"ic_setting"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    rightBtn.tintColor = [UIColor whiteColor];
+    [rightBtn setImage:addIamge forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:rightBtn]];
 
+}
+
+-(void)rightBtnClick{
+    SettingViewController * setvc = [SettingViewController new];
+    [self.navigationController pushViewController:setvc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

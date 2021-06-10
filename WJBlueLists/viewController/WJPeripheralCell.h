@@ -15,3 +15,9 @@
 
 @property (nonatomic, strong) UILabel *rissLabel;
 @end
+
+
+@interface TitleSwitchTableViewCell : UITableViewCell
+@property(nonatomic,strong)UILabel * titleLabel;
+@property(nonatomic,strong)UISwitch * sevenSwitch;
+@end

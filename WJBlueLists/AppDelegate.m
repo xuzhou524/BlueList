@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "WJPeripheralVC.h"
+#import "LCNavigationViewController.h"
+
 @import GoogleMobileAds;
 
 @implementation AppDelegate
@@ -17,14 +19,14 @@
 #else
     [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
 #endif
-    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:[[WJPeripheralVC alloc] init]];
+    LCNavigationViewController *na = [[LCNavigationViewController alloc]initWithRootViewController:[[WJPeripheralVC alloc] init]];
     
-    [na.navigationBar setBackgroundImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]
-                             forBarMetrics:UIBarMetricsDefault];
-    [na.navigationBar setTitleTextAttributes:@{
-                                                 NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:17],
-                                                 NSForegroundColorAttributeName : [UIColor whiteColor]
-                                                 }];
+//    [na.navigationBar setBackgroundImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]
+//                             forBarMetrics:UIBarMetricsDefault];
+//    [na.navigationBar setTitleTextAttributes:@{
+//                                                 NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:17],
+//                                                 NSForegroundColorAttributeName : [UIColor whiteColor]
+//                                                 }];
     
     self.window.rootViewController = na;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;

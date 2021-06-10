@@ -72,3 +72,50 @@
     }];
 }
 @end
+
+
+@implementation TitleSwitchTableViewCell
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self sebViews];
+    }
+    return self;
+}
+
+-(void)sebViews{
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.clipsToBounds = YES;
+    
+    UIView *bgView = [UIView new];
+    bgView.backgroundColor = [UIColor whiteColor];
+    [self.contentView addSubview:bgView];
+    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.equalTo(self.contentView);
+        make.top.equalTo(self.contentView).offset(0);
+    }];
+    
+    _titleLabel = [UILabel new];
+    _titleLabel.font = [UIFont systemFontOfSize:15];
+    _titleLabel.textColor = [UIColor colorWithHexString:@"3d3d3d"];
+    [bgView addSubview:_titleLabel];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(16);
+        make.centerY.equalTo(bgView);
+    }];
+    
+    _sevenSwitch = [UISwitch new];
+    _sevenSwitch.onTintColor = [UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1];
+    _sevenSwitch.thumbTintColor = [UIColor colorWithHexString:@"3d3d3d"];
+    [bgView addSubview:_sevenSwitch];
+    [_sevenSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.contentView).offset(-16);
+        make.centerY.equalTo(self.contentView);
+        make.width.equalTo(@50);
+        make.height.equalTo(@30);
+    }];
+
+}
+@end
