@@ -25,6 +25,7 @@
 		24DB8FB41CEC516400700644 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB8FB31CEC516400700644 /* GoogleMobileAds.framework */; };
 		24EA438D1CE1BAD000DC1C57 /* WJServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EA438C1CE1BAD000DC1C57 /* WJServerVC.m */; };
 		24F962CD1CEB0605007973CA /* WJCharacteristicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F962CC1CEB0605007973CA /* WJCharacteristicCell.m */; };
+		533CFA602671A55600163051 /* WJBlueLists.m in Sources */ = {isa = PBXBuildFile; fileRef = 533CFA5F2671A55600163051 /* WJBlueLists.m */; };
 		539514021DE6930A0059F87A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539514011DE6930A0059F87A /* NotificationCenter.framework */; };
 		539514061DE6930A0059F87A /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539514051DE6930A0059F87A /* TodayViewController.m */; };
 		5395140D1DE6930A0059F87A /* WJBlueListWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 539514001DE6930A0059F87A /* WJBlueListWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -103,6 +104,8 @@
 		24EA438C1CE1BAD000DC1C57 /* WJServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJServerVC.m; sourceTree = "<group>"; };
 		24F962CB1CEB0605007973CA /* WJCharacteristicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJCharacteristicCell.h; sourceTree = "<group>"; };
 		24F962CC1CEB0605007973CA /* WJCharacteristicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJCharacteristicCell.m; sourceTree = "<group>"; };
+		533CFA5E2671A55600163051 /* WJBlueLists.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WJBlueLists.h; sourceTree = "<group>"; };
+		533CFA5F2671A55600163051 /* WJBlueLists.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WJBlueLists.m; sourceTree = "<group>"; };
 		539514001DE6930A0059F87A /* WJBlueListWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WJBlueListWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		539514011DE6930A0059F87A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		539514041DE6930A0059F87A /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 				24CD14441CD9A2FE00E19F1B /* blueTooth */,
 				24CD14141CD9A2C200E19F1B /* AppDelegate.h */,
 				24CD14151CD9A2C200E19F1B /* AppDelegate.m */,
+				533CFA5E2671A55600163051 /* WJBlueLists.h */,
+				533CFA5F2671A55600163051 /* WJBlueLists.m */,
 				24CD14171CD9A2C200E19F1B /* ViewController.h */,
 				24CD14181CD9A2C200E19F1B /* ViewController.m */,
 				24CD141A1CD9A2C200E19F1B /* Main.storyboard */,
@@ -488,6 +493,7 @@
 				53FCA94D2330C983008B0EF0 /* BabyToy.m in Sources */,
 				53FCA94A2330C983008B0EF0 /* BabyRhythm.m in Sources */,
 				24EA438D1CE1BAD000DC1C57 /* WJServerVC.m in Sources */,
+				533CFA602671A55600163051 /* WJBlueLists.m in Sources */,
 				2406C51E1CE031D100AF6102 /* WJBaseCell.m in Sources */,
 				24CD14191CD9A2C200E19F1B /* ViewController.m in Sources */,
 				24CD14161CD9A2C200E19F1B /* AppDelegate.m in Sources */,
