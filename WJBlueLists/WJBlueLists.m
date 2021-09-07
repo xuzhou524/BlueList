@@ -7,6 +7,9 @@
 //
 
 #import "WJBlueLists.h"
+#import "PrivacyAlert.h"
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+
 @import GoogleMobileAds;
 
 @interface WJBlueLists()<GADFullScreenContentDelegate>{
@@ -38,13 +41,13 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        #ifdef DEBUG
-        #else
+#ifdef DEBUG
+#else
         NSString * i = [[NSUserDefaults standardUserDefaults] objectForKey:@"com.xuzhou.WJBlueLists"];
         if ([i intValue] != 1) {
             [self views];
         }
-        #endif
+#endif
     }
     return self;
 }
@@ -68,20 +71,54 @@
 }
 
 -(void)CheakAd{//这一部分的逻辑大家根据自身需求定制
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    if ([[userDefault objectForKey:@"xuzhou.WJBlueLists"] isEqualToString:@"YES"]) {
+        [self initAdKleinSDK];
+    }else {
+        [self showPrivacyAlert];
+    }
+}
+
+-(void)initAdKleinSDK{
     //谷歌插屏广告
     GADRequest *request = [GADRequest request];
-      [GADInterstitialAd loadWithAdUnitID:@"ca-app-pub-9353975206269682/9724933629"
-                                      request:request
-                            completionHandler:^(GADInterstitialAd *ad, NSError *error) {
-          if (error) {
-             NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
-             return;
-          }
-          self.interstitial = ad;
-          self.interstitial.fullScreenContentDelegate = self;
-          [self show];
-          [self.interstitial presentFromRootViewController:_adViewController];
-      }];
+    [GADInterstitialAd loadWithAdUnitID:@"ca-app-pub-9353975206269682/9724933629"
+                                request:request
+                      completionHandler:^(GADInterstitialAd *ad, NSError *error) {
+        if (error) {
+            NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
+            return;
+        }
+        self.interstitial = ad;
+        self.interstitial.fullScreenContentDelegate = self;
+        [self show];
+        [self.interstitial presentFromRootViewController:_adViewController];
+    }];
+}
+
+- (void)showPrivacyAlert {
+    PrivacyAlert *alert = [[PrivacyAlert alloc]init];
+    [alert showOnComplete:^(BOOL result) {
+        if (result) {
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            [userDefault setObject:@"YES" forKey:@"xuzhou.WJBlueLists"];
+            [userDefault synchronize];
+            if (@available(iOS 14.0, *)) {
+                [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self initAdKleinSDK];
+                    });
+                }];
+            }
+        } else {
+            [UIView animateWithDuration:0.5f animations:^{
+                self.window.alpha = 0;
+                self.window.frame = CGRectMake(0, self.window.bounds.size.height / 2, self.window.bounds.size.width, 0.5);
+            } completion:^(BOOL finished) {
+                exit(0);
+            }];
+        }
+    }];
 }
 
 - (void)show{

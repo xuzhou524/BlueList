@@ -41,7 +41,7 @@
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view);
         make.left.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-70);
+        make.bottom.equalTo(self.view).offset(-80);
     }];
     [self.view bringSubviewToFront:_noPeripheralView];
 
@@ -72,12 +72,13 @@
 }
 
 -(void)createAdView{
-    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 320)/2.00, SCREEN_HEIGHT - 150,320 , 50)];
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 320)/2.00, SCREEN_HEIGHT - 150,320 , 80)];
     self.bannerView.adSize = kGADAdSizeBanner;
     [self.view addSubview:self.bannerView];
     self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/4408139710";
     self.bannerView.rootViewController = self;
     [self.bannerView loadRequest:[GADRequest request]];
+    
 }
 
 - (void)viewDidLoad {
