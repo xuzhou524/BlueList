@@ -10,10 +10,11 @@
 #import "OBDBluetooth.h"
 #import "WJPeripheralCell.h"
 #import "WJCharacteristicCell.h"
+@import GoogleMobileAds;
 
-@interface WJCharacteristicVC ()<OBDBluetoothDelegate>
+@interface WJCharacteristicVC ()<OBDBluetoothDelegate,GADFullScreenContentDelegate>
 @property (nonatomic, strong) NSMutableArray *sectionTitleArray;
-
+@property(nonatomic, strong) GADInterstitialAd *interstitial;
 @end
 
 @implementation WJCharacteristicVC
@@ -22,7 +23,6 @@
     [super viewWillAppear: animated];
     [OBDBluetooth shareOBDBluetooth].delegate = self;
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,11 +40,31 @@
     [self.baseTableVC setTableHeaderView:sectionView];
     [self setBarItem];
     
+#ifdef DEBUG
+#else
+    [self createAdView];
+#endif
+    
+}
+
+-(void)createAdView{
+    GADRequest *request = [GADRequest request];
+    [GADInterstitialAd loadWithAdUnitID:@"ca-app-pub-9353975206269682/9724933629"
+                                request:request
+                      completionHandler:^(GADInterstitialAd *ad, NSError *error) {
+        if (error) {
+            NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
+            return;
+        }
+        self.interstitial = ad;
+        self.interstitial.fullScreenContentDelegate = self;
+        [self.interstitial presentFromRootViewController:self];
+    }];
 }
 
 - (void)onClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-
+    
 }
 
 #pragma mark - 属性 懒加载
@@ -81,7 +101,7 @@
 
 #pragma mark - tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
- 
+    
     [self getPropertyArray];
     
     if (self.characteristic.properties & CBCharacteristicPropertyRead) {
@@ -93,7 +113,7 @@
 
 //每一个分区的头
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-
+    
     if ((self.characteristic.properties & CBCharacteristicPropertyRead) && (section == 0)) {
         
         return @"读数据";
@@ -119,7 +139,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
- 
+    
     if ((self.characteristic.properties & CBCharacteristicPropertyRead) && (section == 0)) {
         
         NSMutableArray * mutalbeArray = [[OBDBluetooth shareOBDBluetooth].readDataDic objectForKey:self.characteristic.UUID];
@@ -158,7 +178,7 @@
                 NSString * dataString = [NSString stringWithFormat:@"%@" ,[mutalbeArray objectAtIndex:indexPath.row - 1] ];
                 cell.textDataLabel.text = dataString;
             }
-  
+            
             
             //  LOG(@"读取数据=======: %@  == %@",[[[OBDBluetooth shareOBDBluetooth]readDataDic]objectForKey:self.characteristic.UUID],dataString);
         }
@@ -167,38 +187,38 @@
         //属性列表
         cell.textDataLabel.text = [self.sectionTitleArray objectAtIndex:indexPath.row];
     }
- 
+    
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if ([[self.sectionTitleArray objectAtIndex:indexPath.section] isEqualToString:@"读数据"]) {
-//        
-//        if(indexPath.row == 0) {
-//            [[OBDBluetooth shareOBDBluetooth] readCharacteristicValue:self.characteristic];
-////            [self.baseTableVC reloadData];
-//            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        }
-//        
-//    }
-//    
-//    if ([[self.sectionTitleArray objectAtIndex:indexPath.section] isEqualToString:@"写数据"]) {
-//        if(indexPath.row == 0) {
-//            [[OBDBluetooth shareOBDBluetooth]writeValue:@"66" andCharacteristic:self.characteristic];
-//            [self.baseTableVC reloadData];
-//        }
-//        
-//    }
+    //    if ([[self.sectionTitleArray objectAtIndex:indexPath.section] isEqualToString:@"读数据"]) {
+    //
+    //        if(indexPath.row == 0) {
+    //            [[OBDBluetooth shareOBDBluetooth] readCharacteristicValue:self.characteristic];
+    ////            [self.baseTableVC reloadData];
+    //            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //        }
+    //
+    //    }
+    //
+    //    if ([[self.sectionTitleArray objectAtIndex:indexPath.section] isEqualToString:@"写数据"]) {
+    //        if(indexPath.row == 0) {
+    //            [[OBDBluetooth shareOBDBluetooth]writeValue:@"66" andCharacteristic:self.characteristic];
+    //            [self.baseTableVC reloadData];
+    //        }
+    //
+    //    }
     
-     if ((self.characteristic.properties & CBCharacteristicPropertyRead) && (indexPath.section == 0)) {
-         if(indexPath.row == 0) {
-             [[OBDBluetooth shareOBDBluetooth] readCharacteristicValue:self.characteristic];
-             //            [self.baseTableVC reloadData];
-             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-         }
-     }
+    if ((self.characteristic.properties & CBCharacteristicPropertyRead) && (indexPath.section == 0)) {
+        if(indexPath.row == 0) {
+            [[OBDBluetooth shareOBDBluetooth] readCharacteristicValue:self.characteristic];
+            //            [self.baseTableVC reloadData];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }
+    }
     
     
 }
@@ -212,7 +232,6 @@
     
 }
 
-
 - (void)didDisconnectPeripheral {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController popToRootViewControllerAnimated:YES];
@@ -224,14 +243,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark -GADInterstitialDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)hide{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    _interstitial = nil;
 }
-*/
+
+- (void)adDidPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(Timered:) userInfo:nil repeats:YES];
+}
+
+- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    [self hide];
+}
+
+- (void)Timered:(NSTimer*)timer {
+    [self hide];
+}
 
 @end

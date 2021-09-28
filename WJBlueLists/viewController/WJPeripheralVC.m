@@ -30,7 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
 
     _tableView = [UITableView new];
     _tableView.backgroundColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
@@ -41,7 +41,7 @@
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view);
         make.left.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-80);
+        make.bottom.equalTo(self.view).offset(-90);
     }];
     [self.view bringSubviewToFront:_noPeripheralView];
 
@@ -72,8 +72,8 @@
 }
 
 -(void)createAdView{
-    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 320)/2.00, SCREEN_HEIGHT - 150,320 , 80)];
-    self.bannerView.adSize = kGADAdSizeBanner;
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, SCREEN_HEIGHT - 90,SCREEN_WIDTH - 30 , 85)];
+    self.bannerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.bannerView];
     self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/4408139710";
     self.bannerView.rootViewController = self;
@@ -130,7 +130,7 @@
 
 #pragma mark - tableview 代理方法
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110;
+    return 90;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

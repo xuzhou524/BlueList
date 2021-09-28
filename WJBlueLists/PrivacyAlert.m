@@ -8,7 +8,6 @@
 
 #import "PrivacyAlert.h"
 
-
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define RGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
@@ -17,58 +16,41 @@ typedef void (^ButtonActionBlock)(UIButton *thisButton);
  
 @implementation UIButton (targetBlock)
  
-- (void)addTargetActionBlock:(void (^)(UIButton *aButton))atBlock
-{
+- (void)addTargetActionBlock:(void (^)(UIButton *aButton))atBlock{
     [self setActionBlock:atBlock];
-    
     [super addTarget:self action:@selector(buttonDidTouchIniside) forControlEvents:UIControlEventTouchUpInside];
 }
  
- 
-- (void)buttonDidTouchIniside
-{
+- (void)buttonDidTouchIniside{
     ButtonActionBlock aBlock = [self actionBlock];
-    if (aBlock)
-    {
+    if (aBlock){
         aBlock(self);
     }
 }
  
- 
-- (void)performTargetActionBlock
-{
+- (void)performTargetActionBlock{
     [self buttonDidTouchIniside];
 }
  
- 
-- (ButtonActionBlock)actionBlock
-{
+- (ButtonActionBlock)actionBlock{
     return objc_getAssociatedObject(self, "targetBlock");
 }
  
- 
-- (void)setActionBlock:(ButtonActionBlock)actionBlock
-{
+- (void)setActionBlock:(ButtonActionBlock)actionBlock{
     objc_setAssociatedObject(self, "targetBlock", actionBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 @end
 
 @interface PrivacyAlert ()<UITextViewDelegate>
-
 @property (nonatomic, strong) UIView *backgroundView;
-
-
-
 @end
 
 @implementation PrivacyAlert{
-    
     UILabel *titleLabel;
     UITextView *textView;
 
     UIButton *cancelBtn;
     UIButton *bottomBtn;
-
 }
 
 - (void)showOnComplete:(void(^)(BOOL result))completion {
@@ -178,12 +160,10 @@ typedef void (^ButtonActionBlock)(UIButton *thisButton);
 }
 
 
-
 - (void)hide{
     self.hidden = YES;
     [self removeFromSuperview];
 }
-
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
     if ([[URL scheme] isEqualToString:@"userAgreement"]) {

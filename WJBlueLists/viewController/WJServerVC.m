@@ -11,11 +11,11 @@
 #import "WJServerCell.h"
 #import "WJPeripheralCell.h"
 #import "WJCharacteristicVC.h"
+@import GoogleMobileAds;
 
-@interface WJServerVC ()<OBDBluetoothDelegate>
+@interface WJServerVC ()<OBDBluetoothDelegate,GADFullScreenContentDelegate>
 @property (nonatomic, strong) NSArray *sectonArray;
-
-
+@property(nonatomic, strong) GADInterstitialAd *interstitial;
 @end
 
 @implementation WJServerVC
@@ -25,7 +25,6 @@
     [OBDBluetooth shareOBDBluetooth].delegate = self;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"服务";
@@ -34,7 +33,7 @@
     
     //创建头文件  tableview的头
     UIView * sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60)];
-//    sectionView.backgroundColor = [UIColor orangeColor];
+    //    sectionView.backgroundColor = [UIColor orangeColor];
     UILabel * nameLabel = [[UILabel alloc]init];
     nameLabel.frame = CGRectMake(10, 10, SCREEN_WIDTH - 15, 25);
     nameLabel.font = [UIFont systemFontOfSize:16];
@@ -53,12 +52,30 @@
     [self.baseTableVC setTableHeaderView:sectionView];
     [self setBarItem];
     
-    // Do any additional setup after loading the view.
+#ifdef DEBUG
+#else
+    [self createAdView];
+#endif
+    
+}
+
+-(void)createAdView{
+    GADRequest *request = [GADRequest request];
+    [GADInterstitialAd loadWithAdUnitID:@"ca-app-pub-9353975206269682/9724933629"
+                                request:request
+                      completionHandler:^(GADInterstitialAd *ad, NSError *error) {
+        if (error) {
+            NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
+            return;
+        }
+        self.interstitial = ad;
+        self.interstitial.fullScreenContentDelegate = self;
+        [self.interstitial presentFromRootViewController:self];
+    }];
 }
 
 - (void)onClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-
 }
 
 #pragma mark - 属性
@@ -92,18 +109,14 @@
     }else {
         return [NSString stringWithFormat:@"UUID：%@",service.UUID];
     }
-
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
     return 60;
-    
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
     return 60;
 }
 
@@ -132,7 +145,7 @@
     NSString *uuidData = [NSString stringWithFormat:@"%@",characteristic.UUID.data];
     NSString *uuidS = [NSString stringWithFormat:@"%@",characteristic.UUID];
     //LOG(@"uuids = %@ \n uuidData = %@ ",uuidS,uuidData);
-
+    
     /*
      1,
      uuids = 49535343-ACA3-481C-91EC-D85E28A60318
@@ -148,7 +161,7 @@
      */
     //字符串第二次处理
     
-
+    
     //字符串的处理
     NSCharacterSet*set = [NSCharacterSet characterSetWithCharactersInString:@"<>"];
     uuidS = [uuidS  stringByReplacingOccurrencesOfString:@"-" withString:@""];
@@ -161,7 +174,7 @@
     }else {
         cell.nameLabel.text = [NSString stringWithFormat:@"%@",characteristic.UUID];
     }
-
+    
     NSString *proString =[self propertiesForString: characteristic.properties];
     
     //字符串第二次处理
@@ -177,12 +190,12 @@
                 cell.desLabel.text = [NSString stringWithFormat:@"属性：%@ %@",proString,[NSString stringWithFormat:@"%@",data]];
             }
         }else {
-//            NSString *string = [NSString stringWithFormat:@"%@",data];
-//            if (string) {
-//                cell.desLabel.text = [NSString stringWithFormat:@"属性：%@  %@",proString ,string];
-//            }else {
-//                cell.desLabel.text = [NSString stringWithFormat:@"属性：%@",proString];
-//            }
+            //            NSString *string = [NSString stringWithFormat:@"%@",data];
+            //            if (string) {
+            //                cell.desLabel.text = [NSString stringWithFormat:@"属性：%@  %@",proString ,string];
+            //            }else {
+            //                cell.desLabel.text = [NSString stringWithFormat:@"属性：%@",proString];
+            //            }
             cell.desLabel.text = [NSString stringWithFormat:@"属性：%@",proString];
         }
         
@@ -191,15 +204,15 @@
     }
     
     // //第一次处理字符串  和读到的字符串的格式是相对应的
-//    NSString * valueString = [[OBDBluetooth shareOBDBluetooth].readDataDic objectForKey:characteristic.UUID];
-//    if (valueString) {
-//        cell.desLabel.text = [NSString stringWithFormat:@"属性：%@  %@",proString ,valueString];
-//    }else {
-//        cell.desLabel.text = [NSString stringWithFormat:@"属性：%@",proString];
-//    }
+    //    NSString * valueString = [[OBDBluetooth shareOBDBluetooth].readDataDic objectForKey:characteristic.UUID];
+    //    if (valueString) {
+    //        cell.desLabel.text = [NSString stringWithFormat:@"属性：%@  %@",proString ,valueString];
+    //    }else {
+    //        cell.desLabel.text = [NSString stringWithFormat:@"属性：%@",proString];
+    //    }
     //cell.desLabel.text = [NSString stringWithFormat:@"属性：%@ ,%d  %@",proString ,characteristic.properties,valueString];
-   
- 
+    
+    
     return cell;
 }
 
@@ -212,7 +225,7 @@
     characVC.characteristic =[characArray objectAtIndex:indexPath.row];
     
     [self.navigationController pushViewController:characVC animated:YES];
-   
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -222,15 +235,15 @@
 
 
 - (void)nextVC {
-//刷新界面
+    //刷新界面
     LOG(@"刷新界面");
 }
 
 - (void)didDisconnectPeripheral {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//        [self.navigationController popViewControllerAnimated:YES];
-//    });
+    //    dispatch_async(dispatch_get_main_queue(), ^{
+    //        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    //        [self.navigationController popViewControllerAnimated:YES];
+    //    });
     
     LOG(@"返回");
 }
@@ -262,7 +275,7 @@
 - (NSString *)propertiesForString:(int)proerities {
     
     NSString * proertiesString = nil;
- 
+    
     NSArray * stringArray = @[@"需要加密的申请",@"需要加密的通知",@"拓展",@"通过验证的",@"声明",@"订阅",@"可写",@"写无回复",@"可读",@"可广播"];
     NSArray *dataArray = @[@512,@256,@128,@64,@32,@16,@8,@4,@2,@1];
     for(int i = 0; i < [stringArray count]; i ++ ) {
@@ -279,7 +292,7 @@
             }
         }
     }
-
+    
     
     return proertiesString;
 }
@@ -319,14 +332,23 @@
     }
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark -GADInterstitialDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)hide{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    _interstitial = nil;
 }
-*/
+
+- (void)adDidPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(Timered:) userInfo:nil repeats:YES];
+}
+
+- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    [self hide];
+}
+
+- (void)Timered:(NSTimer*)timer {
+    [self hide];
+}
 
 @end

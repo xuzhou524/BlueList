@@ -16,14 +16,30 @@
 
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    [self.navigationBar setBackgroundImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]
-                             forBarMetrics:UIBarMetricsDefault];
-    //navigationBar Title 样式
-    [self.navigationBar setTitleTextAttributes:@{
-                                                 NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:17],
-                                                 NSForegroundColorAttributeName : [UIColor whiteColor]
-                                                 }];
-    [self.navigationBar setShadowImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]];
+    
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance * appearance = [UINavigationBarAppearance new];
+        [appearance configureWithOpaqueBackground];
+        appearance.backgroundColor = [UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1];
+        appearance.shadowImage = [self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]];
+        appearance.titleTextAttributes = @{
+            NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:17],
+            NSForegroundColorAttributeName : [UIColor whiteColor]
+        };
+        
+        self.navigationBar.scrollEdgeAppearance = appearance;
+        self.navigationBar.standardAppearance = appearance;
+    }else{
+        [self.navigationBar setBackgroundImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]
+                                 forBarMetrics:UIBarMetricsDefault];
+        //navigationBar Title 样式
+        [self.navigationBar setTitleTextAttributes:@{
+                                                     NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:17],
+                                                     NSForegroundColorAttributeName : [UIColor whiteColor]
+                                                     }];
+        [self.navigationBar setShadowImage:[self createImageWithColor:[UIColor colorWithRed:30/255.0 green:151/255.0 blue:254/255.0 alpha:1]]];
+    }
+
 }
 
 - (void)viewDidLoad {

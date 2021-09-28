@@ -26,15 +26,15 @@
     bgView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(15);
+        make.top.equalTo(self.contentView).offset(8);
         make.left.equalTo(self.contentView).offset(15);
         make.right.equalTo(self.contentView).offset(-15);
         make.bottom.equalTo(self.contentView);
     }];
 
     _titleLabel = [[UILabel alloc]init];
-    _titleLabel.textColor = [UIColor colorWithHexString:@"3d3d3d"];
-    _titleLabel.font = [UIFont systemFontOfSize:16];
+    _titleLabel.textColor = [UIColor colorWithHexString:@"333333"];
+    _titleLabel.font = [UIFont systemFontOfSize:14];
     [bgView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(bgView).offset(15);
@@ -43,7 +43,7 @@
     
     _rissLabel = [UILabel new];
     _rissLabel.textColor = [UIColor colorWithHexString:@"3d3d3d"];
-    _rissLabel.font = [UIFont systemFontOfSize:13];
+    _rissLabel.font = [UIFont systemFontOfSize:12];
     [bgView addSubview:_rissLabel];
     [_rissLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_titleLabel);
@@ -63,12 +63,12 @@
     _identifierLabel.textColor = [UIColor colorWithHexString:@"3d3d3d"];
     _identifierLabel.adjustsFontSizeToFitWidth = YES;
     _identifierLabel.numberOfLines = 0;
-    _identifierLabel.font = [UIFont systemFontOfSize:14];
+    _identifierLabel.font = [UIFont systemFontOfSize:12];
     [bgView addSubview:_identifierLabel];
     [_identifierLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_titleLabel);
         make.right.equalTo(bgView);
-        make.bottom.equalTo(bgView).offset(-15);
+        make.bottom.equalTo(bgView).offset(-10);
     }];
 }
 @end
