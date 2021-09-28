@@ -33,6 +33,13 @@
     _tableView.dataSource = self;
 
     regClass(self.tableView, TitleSwitchTableViewCell);
+    
+#ifdef DEBUG
+#else
+    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
+        [SKStoreReviewController requestReview];
+    }
+#endif
 
 }
 

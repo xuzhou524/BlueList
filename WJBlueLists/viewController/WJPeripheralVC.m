@@ -50,6 +50,12 @@
     [[OBDBluetooth shareOBDBluetooth] scanPeripheral];
 #ifdef DEBUG
 #else
+    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
+        [SKStoreReviewController requestReview];
+    }
+#endif
+#ifdef DEBUG
+#else
     [self createAdView];
 #endif
     
