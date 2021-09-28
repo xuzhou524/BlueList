@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "WJPeripheralCell.h"
+#import <StoreKit/StoreKit.h>
 
 #define regClass( table,cell ) [table registerClass:[cell class] forCellReuseIdentifier:[NSString stringWithFormat:@"%@", [cell class]]]
 #define getCell(cell) [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%@", [cell class]] forIndexPath:indexPath]
