@@ -79,7 +79,7 @@
 }
 
 -(void)createAdView{
-    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, SCREEN_HEIGHT - 90,SCREEN_WIDTH - 30 , 85)];
+    self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, SCREEN_HEIGHT - 110,SCREEN_WIDTH - 30 , 85)];
     self.bannerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.bannerView];
     self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/4408139710";
@@ -93,8 +93,8 @@
     self.title = @"首页";
 
     //在没有搜索到设备的时候  提示用户没有搜索到设备
-    _noPeripheralView  = [[UILabel alloc]initWithFrame:CGRectMake(25, 50, [UIScreen mainScreen].bounds.size.width - 50, 250)];
-    _noPeripheralView.text = @"暂时还未搜索到附近蓝牙设备！请检查如下可能：\n\n1.检查手机是否打开蓝牙功能;\n\n2.检查App是否开启蓝牙权限;\n\n3.请打开您要连接的蓝牙设备.";
+    _noPeripheralView  = [[UILabel alloc]initWithFrame:CGRectMake(25, 100, [UIScreen mainScreen].bounds.size.width - 50, 250)];
+    _noPeripheralView.text = @"蓝牙通：是一款链接蓝牙外设的小工具，展示数据帮助您学习蓝牙知识等。\n\n暂时还未搜索到附近蓝牙设备！请检查如下可能：\n\n1.检查手机是否打开蓝牙功能;\n\n2.检查App是否开启蓝牙权限;\n\n3.请打开您要连接的蓝牙设备.";
     _noPeripheralView.font = WJFont(13);
     _noPeripheralView.textColor = [UIColor grayColor];
     _noPeripheralView.textAlignment = NSTextAlignmentLeft;
@@ -102,13 +102,13 @@
     [self.view addSubview:_noPeripheralView];
     [self.view bringSubviewToFront:_noPeripheralView];
     
-    UIButton * rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    UIImage * addIamge = [[UIImage imageNamed:@"ic_setting"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    rightBtn.tintColor = [UIColor whiteColor];
-    [rightBtn setImage:addIamge forState:UIControlStateNormal];
-    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:rightBtn]];
+//    UIButton * rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+//    UIImage * addIamge = [[UIImage imageNamed:@"ic_setting"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    rightBtn.tintColor = [UIColor whiteColor];
+//    [rightBtn setImage:addIamge forState:UIControlStateNormal];
+//    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+//
+//    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:rightBtn]];
 
 }
 
