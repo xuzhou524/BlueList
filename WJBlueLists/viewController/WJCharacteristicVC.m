@@ -40,10 +40,10 @@
     [self.baseTableVC setTableHeaderView:sectionView];
     [self setBarItem];
     
-#ifdef DEBUG
-#else
+//#ifdef DEBUG
+//#else
     [self createAdView];
-#endif
+//#endif
     
 }
 
@@ -226,7 +226,7 @@
 - (void)readDataForString {
     LOG(@"特征读数据界面");
     dispatch_async(dispatch_get_main_queue(), ^{
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.baseTableVC reloadData];
     });
     

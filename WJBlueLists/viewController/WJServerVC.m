@@ -52,10 +52,10 @@
     [self.baseTableVC setTableHeaderView:sectionView];
     [self setBarItem];
     
-#ifdef DEBUG
-#else
+//#ifdef DEBUG
+//#else
     [self createAdView];
-#endif
+//#endif
     
 }
 

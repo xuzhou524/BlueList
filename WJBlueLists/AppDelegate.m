@@ -15,10 +15,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-#ifdef DEBUG
-#else
+//#ifdef DEBUG
+//#else
     [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
-#endif
+//#endif
     
     if (@available(iOS 15.0, *)) {
         [UITableView appearance].sectionHeaderTopPadding = 0;

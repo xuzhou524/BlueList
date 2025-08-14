@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -46,6 +46,11 @@
 		53FCA94D2330C983008B0EF0 /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FCA9412330C983008B0EF0 /* BabyToy.m */; };
 		53FCA94E2330C983008B0EF0 /* BabyOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FCA9422330C983008B0EF0 /* BabyOptions.m */; };
 		91F1B6D1E9411F119036EAC7 /* Pods_WJBlueLists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEB8FF96F8F58E8AFA22B61 /* Pods_WJBlueLists.framework */; };
+		BA0709AB2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0709AA2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework */; };
+		BA0709AC2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA0709AA2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA11B2782C2BFD060086D80B /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA11B2772C2BFD060086D80B /* Masonry.framework */; };
+		BAC8F10B2E4C9A02007ED870 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0709AA2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework */; };
+		BAC8F10C2E4C9A0B007ED870 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0709AA2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,17 @@
 				5395140D1DE6930A0059F87A /* WJBlueListWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA0709AD2AE2591C00A2D3A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA0709AC2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -140,6 +156,11 @@
 		53FCA9432330C983008B0EF0 /* BabyCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCentralManager.h; sourceTree = "<group>"; };
 		53FCA9442330C983008B0EF0 /* BabyToy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyToy.h; sourceTree = "<group>"; };
 		53FCA9452330C983008B0EF0 /* BabyOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyOptions.h; sourceTree = "<group>"; };
+		BA0709AA2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:EQHXZ8M8AV:Google LLC"; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		BA0709AE2AE2592700A2D3A5 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
+		BA0709B12AE2593600A2D3A5 /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA11B2772C2BFD060086D80B /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA9821C62C295E52003DE1CB /* WJBlueListsRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WJBlueListsRelease.entitlements; sourceTree = "<group>"; };
 		DCEB8FF96F8F58E8AFA22B61 /* Pods_WJBlueLists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WJBlueLists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA580263FF4ED83A83EAC19C /* Pods-WJBlueLists.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WJBlueLists.debug.xcconfig"; path = "Target Support Files/Pods-WJBlueLists/Pods-WJBlueLists.debug.xcconfig"; sourceTree = "<group>"; };
 		FD09A5272043466B9C5A202C /* Pods-WJBlueLists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WJBlueLists.release.xcconfig"; path = "Target Support Files/Pods-WJBlueLists/Pods-WJBlueLists.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +171,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA11B2782C2BFD060086D80B /* Masonry.framework in Frameworks */,
+				BAC8F10B2E4C9A02007ED870 /* GoogleAppMeasurement.xcframework in Frameworks */,
 				24DB8FB41CEC516400700644 /* GoogleMobileAds.framework in Frameworks */,
+				BA0709AB2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework in Frameworks */,
+				BAC8F10C2E4C9A0B007ED870 /* GoogleAppMeasurement.xcframework in Frameworks */,
 				91F1B6D1E9411F119036EAC7 /* Pods_WJBlueLists.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +242,7 @@
 		24CD14101CD9A2C200E19F1B /* WJBlueLists */ = {
 			isa = PBXGroup;
 			children = (
+				BA9821C62C295E52003DE1CB /* WJBlueListsRelease.entitlements */,
 				53FCA9332330C96E008B0EF0 /* BabyBluetooth */,
 				24B9F3A21CE465DD0032EAA4 /* Utility */,
 				2406C5181CE02E4500AF6102 /* viewController */,
@@ -314,6 +340,10 @@
 		A5F35C8B72FD6EBCF66CB0BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA11B2772C2BFD060086D80B /* Masonry.framework */,
+				BA0709B12AE2593600A2D3A5 /* GoogleUtilities.framework */,
+				BA0709AE2AE2592700A2D3A5 /* GoogleMobileAds.xcframework */,
+				BA0709AA2AE2591C00A2D3A5 /* GoogleAppMeasurement.xcframework */,
 				24DB8FB31CEC516400700644 /* GoogleMobileAds.framework */,
 				539514011DE6930A0059F87A /* NotificationCenter.framework */,
 				DCEB8FF96F8F58E8AFA22B61 /* Pods_WJBlueLists.framework */,
@@ -342,7 +372,8 @@
 				24CD140B1CD9A2C200E19F1B /* Frameworks */,
 				24CD140C1CD9A2C200E19F1B /* Resources */,
 				539514111DE6930A0059F87A /* Embed App Extensions */,
-				A37F83FBECB6F0D9D89098FD /* [CP] Embed Pods Frameworks */,
+				BA0709AD2AE2591C00A2D3A5 /* Embed Frameworks */,
+				CB07DF6110B9433AF26C1D2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -387,7 +418,6 @@
 					};
 					539513FF1DE6930A0059F87A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 6JC78V6G2N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -437,7 +467,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A37F83FBECB6F0D9D89098FD /* [CP] Embed Pods Frameworks */ = {
+		CB07DF6110B9433AF26C1D2D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -597,7 +627,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "13803bfd-bec6-4048-ae12-13e8c07f3fc4";
@@ -637,7 +667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "13803bfd-bec6-4048-ae12-13e8c07f3fc4";
 				SDKROOT = iphoneos;
@@ -652,9 +682,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -663,8 +693,11 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WJBlueLists/blue_per.pch";
 				INFOPLIST_FILE = WJBlueLists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
@@ -733,6 +766,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -743,9 +777,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = WJBlueLists/WJBlueListsRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -754,8 +789,11 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WJBlueLists/blue_per.pch";
 				INFOPLIST_FILE = WJBlueLists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
@@ -824,6 +862,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -838,10 +877,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = WJBlueListWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists.WJBlueListWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -862,10 +905,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Zhou Xu (6JC78V6G2N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = WJBlueListWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = chewen.WJBlueLists.WJBlueListWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -49,16 +49,16 @@
     //每次显示界面  重新设置代理  扫描设别
     [OBDBluetooth shareOBDBluetooth].delegate = self;
     [[OBDBluetooth shareOBDBluetooth] scanPeripheral];
-#ifdef DEBUG
-#else
-    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
-        [SKStoreReviewController requestReview];
-    }
-#endif
-#ifdef DEBUG
-#else
+//#ifdef DEBUG
+//#else
+//    if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
+//        [SKStoreReviewController requestReview];
+//    }
+//#endif
+//#ifdef DEBUG
+//#else
     [self createAdView];
-#endif
+//#endif
     
 }
 
@@ -80,9 +80,9 @@
 
 -(void)createAdView{
     self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, SCREEN_HEIGHT - 110,SCREEN_WIDTH - 30 , 85)];
-    self.bannerView.backgroundColor = [UIColor whiteColor];
+    self.bannerView.backgroundColor = [UIColor redColor];
     [self.view addSubview:self.bannerView];
-    self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/4408139710";
+    self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/9066090083";
     self.bannerView.rootViewController = self;
     [self.bannerView loadRequest:[GADRequest request]];
     
@@ -94,7 +94,7 @@
 
     //在没有搜索到设备的时候  提示用户没有搜索到设备
     _noPeripheralView  = [[UILabel alloc]initWithFrame:CGRectMake(25, 100, [UIScreen mainScreen].bounds.size.width - 50, 250)];
-//    _noPeripheralView.text = @"蓝牙通：是一款链接蓝牙外设的小工具，展示数据帮助您学习蓝牙知识等。\n\n暂时还未搜索到附近蓝牙设备！请检查如下可能：\n\n1.检查手机是否打开蓝牙功能;\n\n2.检查App是否开启蓝牙权限;\n\n3.请打开您要连接的蓝牙设备.";
+    _noPeripheralView.text = @"蓝牙通：是一款链接蓝牙外设的小工具，展示数据帮助您学习蓝牙知识等。\n\n暂时还未搜索到附近蓝牙设备！请检查如下可能：\n\n1.检查手机是否打开蓝牙功能;\n\n2.检查App是否开启蓝牙权限;\n\n3.请打开您要连接的蓝牙设备.";
     _noPeripheralView.font = WJFont(13);
     _noPeripheralView.textColor = [UIColor grayColor];
     _noPeripheralView.textAlignment = NSTextAlignmentLeft;
@@ -193,7 +193,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         LOG(@"界面跳转");
         [self.navigationController pushViewController:[[WJServerVC alloc]init] animated:YES];
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         });
     });
@@ -201,7 +201,7 @@
 
 - (void)didDisconnectPeripheral {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
 }
 

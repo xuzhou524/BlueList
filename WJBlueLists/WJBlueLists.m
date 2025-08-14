@@ -41,13 +41,14 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-#ifdef DEBUG
-#else
-        NSString * i = [[NSUserDefaults standardUserDefaults] objectForKey:@"com.xuzhou.WJBlueLists"];
-        if ([i intValue] != 1) {
-            [self views];
-        }
-#endif
+//#ifdef DEBUG
+//#else
+//        NSString * i = [[NSUserDefaults standardUserDefaults] objectForKey:@"com.xuzhou.WJBlueLists"];
+//        if ([i intValue] != 1) {
+//            [self views];
+//        }
+        [self views];
+//#endif
     }
     return self;
 }

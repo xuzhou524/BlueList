@@ -35,12 +35,12 @@
 
     regClass(self.tableView, TitleSwitchTableViewCell);
     
-#ifdef DEBUG
-#else
+//#ifdef DEBUG
+//#else
     if([SKStoreReviewController respondsToSelector:@selector(requestReview)]){
         [SKStoreReviewController requestReview];
     }
-#endif
+//#endif
 
 }
 
