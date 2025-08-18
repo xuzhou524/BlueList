@@ -82,7 +82,7 @@
     self.bannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(15, SCREEN_HEIGHT - 110,SCREEN_WIDTH - 30 , 85)];
     self.bannerView.backgroundColor = [UIColor redColor];
     [self.view addSubview:self.bannerView];
-    self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/9066090083";
+    self.bannerView.adUnitID = @"ca-app-pub-9353975206269682/4408139710";
     self.bannerView.rootViewController = self;
     [self.bannerView loadRequest:[GADRequest request]];
     
